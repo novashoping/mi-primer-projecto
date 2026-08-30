@@ -1,16 +1,901 @@
+ChatGPT Plus
+Sí. Te dejo una web completa de una tienda de ropa vintage, pensada para que puedas subirla directamente a GitHub Pages. Incluye portada, productos, precios, filtros, carrito y un diseño estilo vintage.
+
+index.html
+Copia todo este código en un archivo llamado index.html:
+
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Mi primera web</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RETRO CLUB | Ropa Vintage</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4efe6;
+            color: #25221e;
+        }
+
+        /* ---------- HEADER ---------- */
+
+        header {
+            background: #1e1b18;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: Georgia, serif;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #d7a85d;
+        }
+
+        .cart-button {
+            background: #c58b45;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* ---------- HERO ---------- */
+
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+
+            background:
+                linear-gradient(
+                    rgba(30, 27, 24, 0.55),
+                    rgba(30, 27, 24, 0.55)
+                ),
+                url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1800&q=80");
+
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .hero h1 {
+            font-family: Georgia, serif;
+            font-size: 70px;
+            margin-bottom: 20px;
+            letter-spacing: 5px;
+        }
+
+        .hero p {
+            font-size: 21px;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #c58b45;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background: #a96f30;
+        }
+
+        /* ---------- GENERAL ---------- */
+
+        section {
+            padding: 80px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-family: Georgia, serif;
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #70695f;
+        }
+
+        /* ---------- CATEGORÍAS ---------- */
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .category {
+            height: 230px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-family: Georgia, serif;
+            font-size: 30px;
+            font-weight: bold;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .category::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .category span {
+            position: relative;
+            z-index: 2;
+        }
+
+        .category:hover {
+            transform: scale(1.02);
+            transition: 0.3s;
+        }
+
+        .cat1 {
+            background-image: url("https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=900&q=80");
+        }
+
+        .cat2 {
+            background-image: url("https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=900&q=80");
+        }
+
+        .cat3 {
+            background-image: url("https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=900&q=80");
+        }
+
+        /* ---------- PRODUCTOS ---------- */
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .product {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+        }
+
+        .product img {
+            width: 100%;
+            height: 330px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            font-family: Georgia, serif;
+            font-size: 21px;
+            margin-bottom: 8px;
+        }
+
+        .description {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #a66d2d;
+            margin-bottom: 15px;
+        }
+
+        .buy-button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background: #1e1b18;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .buy-button:hover {
+            background: #c58b45;
+        }
+
+        /* ---------- SOBRE NOSOTROS ---------- */
+
+        .about {
+            background: #29251f;
+            color: white;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .about h2 {
+            font-family: Georgia, serif;
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            line-height: 1.8;
+            color: #ddd;
+        }
+
+        /* ---------- NEWSLETTER ---------- */
+
+        .newsletter {
+            text-align: center;
+            background: #d7c09a;
+        }
+
+        .newsletter h2 {
+            font-family: Georgia, serif;
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .newsletter p {
+            margin-bottom: 25px;
+        }
+
+        .newsletter form {
+            display: flex;
+            justify-content: center;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .newsletter input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            outline: none;
+        }
+
+        .newsletter button {
+            padding: 15px 20px;
+            background: #1e1b18;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* ---------- FOOTER ---------- */
+
+        footer {
+            background: #1e1b18;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer p {
+            color: #aaa;
+            margin-top: 10px;
+        }
+
+        /* ---------- CARRITO ---------- */
+
+        .cart {
+            position: fixed;
+            right: -400px;
+            top: 0;
+            width: 350px;
+            height: 100%;
+            background: white;
+            z-index: 2000;
+            box-shadow: -5px 0 20px rgba(0,0,0,0.2);
+            padding: 25px;
+            transition: 0.3s;
+            overflow-y: auto;
+        }
+
+        .cart.open {
+            right: 0;
+        }
+
+        .cart h2 {
+            font-family: Georgia, serif;
+            margin-bottom: 20px;
+        }
+
+        .close-cart {
+            float: right;
+            background: none;
+            border: none;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        .cart-item {
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+        }
+
+        .cart-total {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 25px;
+        }
+
+        .checkout {
+            width: 100%;
+            margin-top: 20px;
+            padding: 15px;
+            background: #c58b45;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* ---------- MÓVIL ---------- */
+
+        @media (max-width: 1000px) {
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .categories {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            nav {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .newsletter form {
+                flex-direction: column;
+            }
+
+            .newsletter button {
+                margin-top: 5px;
+            }
+
+            .cart {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>¡Hola!</h1>
+    <!-- HEADER -->
 
-    <p>Esta es mi primera página web.</p>
+    <header>
 
-    <button>Haz clic</button>
+        <div class="logo">
+            RETRO CLUB
+        </div>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#productos">Productos</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
+        <button class="cart-button" onclick="openCart()">
+            🛒 Carrito (<span id="cart-count">0</span>)
+        </button>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="inicio">
+
+        <div class="hero-content">
+
+            <h1>RETRO CLUB</h1>
+
+            <p>
+                Ropa vintage seleccionada para personas
+                que no quieren vestir como todo el mundo.
+            </p>
+
+            <a href="#productos" class="button">
+                VER COLECCIÓN
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORÍAS -->
+
+    <section>
+
+        <div class="section-title">
+
+            <h2>Explora nuestro estilo</h2>
+
+            <p>
+                Piezas únicas inspiradas en décadas que nunca pasan de moda.
+            </p>
+
+        </div>
+
+        <div class="categories">
+
+            <a href="#productos" class="category cat1">
+                <span>Chaquetas</span>
+            </a>
+
+            <a href="#productos" class="category cat2">
+                <span>Vestidos</span>
+            </a>
+
+            <a href="#productos" class="category cat3">
+                <span>Camisetas</span>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCTOS -->
+
+    <section id="productos">
+
+        <div class="section-title">
+
+            <h2>Nueva colección</h2>
+
+            <p>
+                Algunas de nuestras piezas favoritas.
+            </p>
+
+        </div>
+
+        <div class="products">
+
+
+            <!-- PRODUCTO 1 -->
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&q=80"
+                    alt="Chaqueta vintage"
+                >
+
+                <div class="product-info">
+
+                    <h3>Chaqueta Vintage</h3>
+
+                    <p class="description">
+                        Chaqueta estilo retro de los años 90.
+                    </p>
+
+                    <div class="price">
+                        59,90 €
+                    </div>
+
+                    <button
+                        class="buy-button"
+                        onclick="addToCart('Chaqueta Vintage', 59.90)"
+                    >
+                        Añadir al carrito
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCTO 2 -->
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=800&q=80"
+                    alt="Vestido vintage"
+                >
+
+                <div class="product-info">
+
+                    <h3>Vestido Retro</h3>
+
+                    <p class="description">
+                        Vestido vintage con estilo clásico.
+                    </p>
+
+                    <div class="price">
+                        45,00 €
+                    </div>
+
+                    <button
+                        class="buy-button"
+                        onclick="addToCart('Vestido Retro', 45)"
+                    >
+                        Añadir al carrito
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCTO 3 -->
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80"
+                    alt="Camiseta vintage"
+                >
+
+                <div class="product-info">
+
+                    <h3>Camiseta Vintage</h3>
+
+                    <p class="description">
+                        Camiseta estilo streetwear de los 90.
+                    </p>
+
+                    <div class="price">
+                        29,90 €
+                    </div>
+
+                    <button
+                        class="buy-button"
+                        onclick="addToCart('Camiseta Vintage', 29.90)"
+                    >
+                        Añadir al carrito
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCTO 4 -->
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1543076447-215ad9ba6923?auto=format&fit=crop&w=800&q=80"
+                    alt="Pantalón vintage"
+                >
+
+                <div class="product-info">
+
+                    <h3>Pantalón Retro</h3>
+
+                    <p class="description">
+                        Pantalón vintage de corte clásico.
+                    </p>
+
+                    <div class="price">
+                        39,90 €
+                    </div>
+
+                    <button
+                        class="buy-button"
+                        onclick="addToCart('Pantalón Retro', 39.90)"
+                    >
+                        Añadir al carrito
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SOBRE NOSOTROS -->
+
+    <section class="about" id="nosotros">
+
+        <div class="about-content">
+
+            <h2>¿Quiénes somos?</h2>
+
+            <p>
+                En RETRO CLUB buscamos prendas con personalidad.
+                Seleccionamos ropa vintage y piezas inspiradas en
+                diferentes décadas para crear un armario diferente,
+                original y con carácter.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- NEWSLETTER -->
+
+    <section class="newsletter" id="contacto">
+
+        <h2>Únete al club</h2>
+
+        <p>
+            Recibe novedades y nuevas prendas antes que nadie.
+        </p>
+
+        <form onsubmit="subscribe(event)">
+
+            <input
+                type="email"
+                placeholder="Tu email"
+                required
+            >
+
+            <button type="submit">
+                SUSCRIBIRME
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h3>RETRO CLUB</h3>
+
+        <p>
+            © 2026 Retro Club · Ropa vintage
+        </p>
+
+    </footer>
+
+
+    <!-- CARRITO -->
+
+    <div class="cart" id="cart">
+
+        <button class="close-cart" onclick="closeCart()">
+            ×
+        </button>
+
+        <h2>Tu carrito</h2>
+
+        <div id="cart-items">
+            <p>Tu carrito está vacío.</p>
+        </div>
+
+        <div class="cart-total">
+            Total: <span id="cart-total">0.00</span> €
+        </div>
+
+        <button class="checkout" onclick="checkout()">
+            COMPRAR
+        </button>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        let cart = [];
+
+        function addToCart(name, price) {
+
+            cart.push({
+                name: name,
+                price: price
+            });
+
+            updateCart();
+
+            openCart();
+        }
+
+
+        function updateCart() {
+
+            const cartItems = document.getElementById("cart-items");
+            const cartCount = document.getElementById("cart-count");
+            const cartTotal = document.getElementById("cart-total");
+
+            cartCount.textContent = cart.length;
+
+            if (cart.length === 0) {
+
+                cartItems.innerHTML =
+                    "<p>Tu carrito está vacío.</p>";
+
+                cartTotal.textContent = "0.00";
+
+                return;
+            }
+
+
+            cartItems.innerHTML = "";
+
+            let total = 0;
+
+
+            cart.forEach((item, index) => {
+
+                total += item.price;
+
+                const div = document.createElement("div");
+
+                div.className = "cart-item";
+
+                div.innerHTML = `
+                    <strong>${item.name}</strong>
+                    <br>
+                    ${item.price.toFixed(2)} €
+                    <br>
+                    <button onclick="removeItem(${index})">
+                        Eliminar
+                    </button>
+                `;
+
+                cartItems.appendChild(div);
+
+            });
+
+
+            cartTotal.textContent = total.toFixed(2);
+
+        }
+
+
+        function removeItem(index) {
+
+            cart.splice(index, 1);
+
+            updateCart();
+
+        }
+
+
+        function openCart() {
+
+            document
+                .getElementById("cart")
+                .classList
+                .add("open");
+
+        }
+
+
+        function closeCart() {
+
+            document
+                .getElementById("cart")
+                .classList
+                .remove("open");
+
+        }
+
+
+        function checkout() {
+
+            if (cart.length === 0) {
+
+                alert("Tu carrito está vacío.");
+
+                return;
+            }
+
+            alert(
+                "Gracias por tu compra. Aquí conectaríamos el sistema de pago."
+            );
+
+        }
+
+
+        function subscribe(event) {
+
+            event.preventDefault();
+
+            alert(
+                "¡Gracias por suscribirte a RETRO CLUB!"
+            );
+
+        }
+
+    </script>
 
 </body>
 </html>
