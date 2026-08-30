@@ -11,27 +11,34 @@
 
 <style>
 
-/* ================================
+/* ==================================================
    COLORES
-================================ */
+================================================== */
 
 :root {
-    --verde: #56634b;
-    --verde-oscuro: #30392d;
-    --crema: #f4eee2;
-    --crema-claro: #fbf8f1;
-    --marron: #49372a;
-    --mostaza: #c69b3b;
-    --gris: #777168;
+    --rojo: #b3262d;
+    --rojo-oscuro: #751b20;
+    --rojo-claro: #d74645;
+
+    --crema: #f5eee2;
+    --crema-claro: #fcfaf5;
+
+    --marron: #3b2b24;
+    --marron-claro: #695449;
+
+    --mostaza: #d0a13b;
+
+    --gris: #77716b;
+
     --blanco: #ffffff;
-    --borde: #ddd4c4;
-    --negro: #211e1a;
+
+    --borde: #ded4c5;
 }
 
 
-/* ================================
+/* ==================================================
    GENERAL
-================================ */
+================================================== */
 
 * {
     margin: 0;
@@ -46,7 +53,7 @@ html {
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: var(--crema);
-    color: var(--negro);
+    color: var(--marron);
 }
 
 a {
@@ -58,66 +65,86 @@ button {
 }
 
 
-/* ================================
+/* ==================================================
    BARRA SUPERIOR
-================================ */
+================================================== */
 
 .top-bar {
-    background: var(--verde-oscuro);
-    color: var(--crema);
+
+    background: var(--rojo-oscuro);
+
+    color: white;
 
     text-align: center;
 
     padding: 10px;
 
     font-size: 10px;
+
     font-weight: bold;
 
     letter-spacing: 3px;
+
 }
 
 
-/* ================================
+/* ==================================================
    HEADER
-================================ */
+================================================== */
 
 header {
+
     position: sticky;
+
     top: 0;
+
     z-index: 1000;
 
     display: flex;
-    justify-content: space-between;
+
     align-items: center;
 
-    padding: 19px 7%;
+    justify-content: space-between;
 
-    background: rgba(251,248,241,.97);
+    padding: 18px 7%;
 
-    backdrop-filter: blur(12px);
+    background: rgba(252,250,245,.96);
+
+    backdrop-filter: blur(15px);
 
     border-bottom: 1px solid var(--borde);
+
 }
 
 .logo {
-    color: var(--marron);
 
     font-size: 25px;
+
     font-weight: 900;
 
     letter-spacing: 3px;
+
+    color: var(--rojo);
+
 }
 
 .logo span {
-    color: var(--verde);
+
+    color: var(--marron);
+
 }
 
+
 nav {
+
     display: flex;
+
     gap: 7px;
+
 }
 
 nav a {
+
     color: var(--marron);
 
     padding: 11px 17px;
@@ -125,29 +152,39 @@ nav a {
     border-radius: 50px;
 
     font-size: 10px;
+
     font-weight: bold;
 
     transition: .25s;
+
 }
 
 nav a:hover {
-    background: var(--verde);
+
+    background: var(--rojo);
+
     color: white;
+
 }
 
-nav .contact-link {
+nav .contact {
+
     background: var(--marron);
+
     color: white;
+
 }
 
 
-/* ================================
-   PORTADA
-================================ */
+/* ==================================================
+   HERO
+================================================== */
 
 .hero {
 
-    min-height: 650px;
+    min-height: 690px;
+
+    position: relative;
 
     display: flex;
 
@@ -157,64 +194,128 @@ nav .contact-link {
 
     text-align: center;
 
-    padding: 70px 30px;
+    overflow: hidden;
 
     color: white;
 
-    background:
+}
+
+
+/* FOTO DE ROPA DETRÁS */
+
+.hero-background {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
 
         linear-gradient(
-            rgba(37,32,25,.72),
-            rgba(37,32,25,.72)
+            rgba(39,25,20,.67),
+            rgba(39,25,20,.67)
         ),
 
-        url("https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=2000&q=90");
+        url("https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=2200&q=90");
 
     background-size: cover;
 
     background-position: center;
+
+    transform: scale(1.03);
+
 }
 
+
+/* EFECTO VINTAGE */
+
+.hero-background::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            transparent 20%,
+            rgba(0,0,0,.25) 100%
+        );
+
+}
+
+
+/* CONTENIDO */
+
 .hero-content {
+
+    position: relative;
+
+    z-index: 2;
 
     width: 100%;
 
     max-width: 1200px;
 
-    margin: auto;
+    padding: 40px 20px;
+
 }
+
+
+/* ETIQUETA */
 
 .hero-label {
 
-    color: var(--mostaza);
+    display: inline-block;
 
-    font-size: 12px;
+    margin-bottom: 24px;
+
+    padding: 9px 18px;
+
+    border: 1px solid rgba(255,255,255,.6);
+
+    border-radius: 50px;
+
+    color: white;
+
+    font-size: 10px;
 
     font-weight: bold;
 
-    letter-spacing: 6px;
+    letter-spacing: 4px;
 
-    margin-bottom: 22px;
 }
+
+
+/* NOMBRE */
 
 .hero h1 {
 
-    font-size: clamp(55px, 11vw, 135px);
+    font-size: clamp(58px, 11vw, 145px);
 
-    line-height: .9;
+    line-height: .85;
 
     letter-spacing: 8px;
 
     font-weight: 900;
 
-    color: var(--crema);
+    color: #fff9ef;
 
     text-shadow:
 
-        5px 5px 0 var(--verde-oscuro);
+        5px 5px 0 var(--rojo-oscuro),
 
-    margin-bottom: 25px;
+        9px 9px 30px rgba(0,0,0,.35);
+
+    margin-bottom: 30px;
+
 }
+
+
+/* SUBTITULO */
 
 .hero p {
 
@@ -222,14 +323,18 @@ nav .contact-link {
 
     margin: auto;
 
-    color: #eee8dc;
+    color: #f6eee2;
 
     font-size: 16px;
 
     line-height: 1.7;
 
     margin-bottom: 30px;
+
 }
+
+
+/* BOTON */
 
 .hero-button {
 
@@ -239,13 +344,13 @@ nav .contact-link {
 
     justify-content: center;
 
-    padding: 16px 27px;
+    padding: 16px 29px;
 
     border-radius: 50px;
 
-    background: var(--mostaza);
+    background: var(--rojo);
 
-    color: var(--marron);
+    color: white;
 
     font-size: 10px;
 
@@ -254,19 +359,27 @@ nav .contact-link {
     letter-spacing: 1px;
 
     transition: .25s;
+
+    box-shadow:
+
+        0 10px 30px rgba(0,0,0,.25);
+
 }
 
 .hero-button:hover {
 
     background: white;
 
+    color: var(--rojo);
+
     transform: translateY(-3px);
+
 }
 
 
-/* ================================
+/* ==================================================
    CONFIANZA
-================================ */
+================================================== */
 
 .trust {
 
@@ -275,41 +388,47 @@ nav .contact-link {
     grid-template-columns: repeat(4,1fr);
 
     background: white;
+
 }
 
 .trust-item {
 
-    padding: 27px 15px;
-
     text-align: center;
 
+    padding: 30px 15px;
+
     border-right: 1px solid var(--borde);
+
 }
 
 .trust-item:last-child {
 
     border-right: none;
+
 }
 
 .trust-icon {
 
-    width: 45px;
-    height: 45px;
+    width: 48px;
 
-    margin: auto auto 10px;
+    height: 48px;
+
+    margin: auto auto 11px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     border-radius: 50%;
 
-    background: var(--crema);
+    background: #f8e9e7;
 
-    color: var(--verde);
+    color: var(--rojo);
 
     font-size: 18px;
+
 }
 
 .trust-item h3 {
@@ -317,6 +436,7 @@ nav .contact-link {
     font-size: 13px;
 
     margin-bottom: 5px;
+
 }
 
 .trust-item p {
@@ -324,38 +444,42 @@ nav .contact-link {
     color: var(--gris);
 
     font-size: 10px;
+
 }
 
 
-/* ================================
+/* ==================================================
    TITULOS
-================================ */
+================================================== */
 
 .section-title {
 
     text-align: center;
 
     padding: 90px 20px 45px;
+
 }
 
 .section-label {
 
-    color: var(--verde);
+    color: var(--rojo);
 
     font-size: 10px;
 
     font-weight: bold;
 
     letter-spacing: 3px;
+
 }
 
 .section-title h2 {
 
     color: var(--marron);
 
-    font-size: 45px;
+    font-size: 46px;
 
     margin: 12px 0;
+
 }
 
 .section-title p {
@@ -367,16 +491,18 @@ nav .contact-link {
     color: var(--gris);
 
     line-height: 1.7;
+
 }
 
 
-/* ================================
+/* ==================================================
    PRODUCTOS
-================================ */
+================================================== */
 
 .products-section {
 
     padding: 0 7% 100px;
+
 }
 
 .products {
@@ -386,6 +512,7 @@ nav .contact-link {
     grid-template-columns: repeat(4,1fr);
 
     gap: 24px;
+
 }
 
 .product {
@@ -396,9 +523,10 @@ nav .contact-link {
 
     border: 1px solid var(--borde);
 
-    border-radius: 22px;
+    border-radius: 23px;
 
     transition: .3s;
+
 }
 
 .product:hover {
@@ -407,68 +535,86 @@ nav .contact-link {
 
     box-shadow:
 
-        0 20px 45px rgba(70,50,30,.13);
+        0 20px 50px rgba(70,35,25,.15);
+
 }
+
+
+/* FOTO */
 
 .product-image {
 
-    height: 330px;
-
     position: relative;
+
+    height: 330px;
 
     overflow: hidden;
 
     background: var(--crema);
+
 }
 
 .product-image img {
 
     width: 100%;
+
     height: 100%;
 
     object-fit: cover;
 
     transition: .5s;
+
 }
 
 .product:hover .product-image img {
 
     transform: scale(1.06);
+
 }
+
+
+/* ETIQUETA */
 
 .tag {
 
     position: absolute;
 
-    top: 14px;
-    left: 14px;
+    z-index: 3;
 
-    z-index: 2;
+    top: 14px;
+
+    left: 14px;
 
     padding: 8px 13px;
 
     border-radius: 50px;
 
-    background: var(--mostaza);
+    background: var(--rojo);
 
-    color: var(--marron);
+    color: white;
 
     font-size: 9px;
 
     font-weight: bold;
+
 }
+
+
+/* FAVORITO */
 
 .favorite {
 
     position: absolute;
 
+    z-index: 4;
+
     top: 14px;
+
     right: 14px;
 
-    z-index: 3;
+    width: 41px;
 
-    width: 40px;
-    height: 40px;
+    height: 41px;
 
     border: none;
 
@@ -480,22 +626,30 @@ nav .contact-link {
 
     font-size: 18px;
 
+    color: var(--rojo);
+
     transition: .2s;
+
 }
 
 .favorite:hover {
 
-    transform: scale(1.08);
+    transform: scale(1.1);
+
 }
+
+
+/* INFO */
 
 .product-info {
 
     padding: 21px;
+
 }
 
 .category {
 
-    color: var(--verde);
+    color: var(--rojo);
 
     font-size: 9px;
 
@@ -504,6 +658,7 @@ nav .contact-link {
     letter-spacing: 2px;
 
     margin-bottom: 7px;
+
 }
 
 .product h3 {
@@ -513,6 +668,7 @@ nav .contact-link {
     font-size: 18px;
 
     margin-bottom: 17px;
+
 }
 
 .product-bottom {
@@ -522,6 +678,7 @@ nav .contact-link {
     align-items: center;
 
     justify-content: space-between;
+
 }
 
 .price {
@@ -531,7 +688,11 @@ nav .contact-link {
     font-size: 18px;
 
     font-weight: 900;
+
 }
+
+
+/* VER MAS */
 
 .more {
 
@@ -539,7 +700,7 @@ nav .contact-link {
 
     border-radius: 50px;
 
-    background: var(--verde);
+    background: var(--rojo);
 
     color: white;
 
@@ -552,19 +713,21 @@ nav .contact-link {
     font-weight: bold;
 
     transition: .25s;
+
 }
 
 .more:hover {
 
-    background: var(--marron);
+    background: var(--rojo-oscuro);
 
     transform: translateY(-2px);
+
 }
 
 
-/* ================================
+/* ==================================================
    MODAL
-================================ */
+================================================== */
 
 .modal {
 
@@ -580,9 +743,10 @@ nav .contact-link {
 
     overflow-y: auto;
 
-    background: rgba(28,23,18,.86);
+    background: rgba(35,20,15,.88);
 
-    backdrop-filter: blur(7px);
+    backdrop-filter: blur(8px);
+
 }
 
 .modal-box {
@@ -595,11 +759,12 @@ nav .contact-link {
 
     grid-template-columns: 1fr 1fr;
 
+    overflow: hidden;
+
     background: var(--crema-claro);
 
     border-radius: 28px;
 
-    overflow: hidden;
 }
 
 .modal-image {
@@ -611,6 +776,7 @@ nav .contact-link {
     min-height: 620px;
 
     object-fit: cover;
+
 }
 
 .modal-content {
@@ -618,17 +784,22 @@ nav .contact-link {
     position: relative;
 
     padding: 43px 38px;
+
 }
 
 .close {
 
     position: absolute;
 
+    z-index: 5;
+
     top: 15px;
+
     right: 15px;
 
-    width: 42px;
-    height: 42px;
+    width: 43px;
+
+    height: 43px;
 
     border: none;
 
@@ -636,18 +807,17 @@ nav .contact-link {
 
     background: white;
 
-    cursor: pointer;
-
-    font-size: 23px;
-
     color: var(--marron);
 
-    z-index: 3;
+    cursor: pointer;
+
+    font-size: 24px;
+
 }
 
 .modal-category {
 
-    color: var(--verde);
+    color: var(--rojo);
 
     font-size: 10px;
 
@@ -656,6 +826,7 @@ nav .contact-link {
     letter-spacing: 2px;
 
     margin-bottom: 8px;
+
 }
 
 .modal-content h2 {
@@ -665,23 +836,25 @@ nav .contact-link {
     font-size: 38px;
 
     margin-bottom: 7px;
+
 }
 
 .modal-price {
 
-    color: var(--marron);
+    color: var(--rojo);
 
     font-size: 27px;
 
     font-weight: 900;
 
     margin-bottom: 27px;
+
 }
 
 
-/* ================================
+/* ==================================================
    DESPLEGABLES
-================================ */
+================================================== */
 
 .accordions {
 
@@ -690,6 +863,7 @@ nav .contact-link {
     flex-direction: column;
 
     gap: 11px;
+
 }
 
 .accordion {
@@ -703,23 +877,26 @@ nav .contact-link {
     overflow: hidden;
 
     transition: .25s;
+
 }
 
 .accordion:hover {
 
-    border-color: var(--mostaza);
+    border-color: var(--rojo);
+
 }
 
 .accordion.open {
 
-    border-color: var(--verde);
+    border-color: var(--rojo);
+
 }
 
 .accordion-header {
 
     width: 100%;
 
-    padding: 16px;
+    padding: 15px;
 
     border: none;
 
@@ -734,6 +911,7 @@ nav .contact-link {
     cursor: pointer;
 
     text-align: left;
+
 }
 
 .accordion-title {
@@ -749,58 +927,65 @@ nav .contact-link {
     font-size: 12px;
 
     font-weight: bold;
+
 }
 
 .accordion-icon {
 
     width: 34px;
+
     height: 34px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     border-radius: 50%;
 
-    background: var(--crema);
+    background: #f8e9e7;
 
-    color: var(--verde);
+    color: var(--rojo);
 
-    font-size: 15px;
 }
 
 .plus {
 
     width: 30px;
+
     height: 30px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     border-radius: 50%;
 
-    background: var(--verde);
+    background: var(--rojo);
 
     color: white;
 
     font-size: 18px;
 
     transition: .3s;
+
 }
 
 .accordion.open .plus {
 
-    background: var(--marron);
+    background: var(--rojo-oscuro);
 
     transform: rotate(45deg);
+
 }
 
 .accordion.open .accordion-header {
 
-    background: #f6f1e8;
+    background: #fcf4f2;
+
 }
 
 .accordion-body {
@@ -810,6 +995,7 @@ nav .contact-link {
     overflow: hidden;
 
     transition: max-height .35s ease;
+
 }
 
 .accordion-inner {
@@ -821,12 +1007,13 @@ nav .contact-link {
     font-size: 12px;
 
     line-height: 1.7;
+
 }
 
 
-/* ================================
-   INFORMACIÓN
-================================ */
+/* ==================================================
+   DATOS
+================================================== */
 
 .data-row {
 
@@ -837,22 +1024,25 @@ nav .contact-link {
     padding: 9px 0;
 
     border-bottom: 1px solid var(--borde);
+
 }
 
 .data-row:last-child {
 
     border-bottom: none;
+
 }
 
 .data-row strong {
 
     color: var(--marron);
+
 }
 
 
-/* ================================
+/* ==================================================
    RESEÑAS
-================================ */
+================================================== */
 
 .review {
 
@@ -863,11 +1053,13 @@ nav .contact-link {
     background: var(--crema);
 
     border-radius: 12px;
+
 }
 
 .review:last-child {
 
     margin-bottom: 0;
+
 }
 
 .stars {
@@ -875,13 +1067,13 @@ nav .contact-link {
     color: var(--mostaza);
 
     margin-bottom: 4px;
+
 }
 
 .review strong {
 
     font-size: 11px;
 
-    color: var(--marron);
 }
 
 .review p {
@@ -889,12 +1081,13 @@ nav .contact-link {
     margin-top: 4px;
 
     font-size: 11px;
+
 }
 
 
-/* ================================
+/* ==================================================
    VINTED
-================================ */
+================================================== */
 
 .vinted {
 
@@ -912,7 +1105,7 @@ nav .contact-link {
 
     border-radius: 50px;
 
-    background: var(--verde-oscuro);
+    background: var(--rojo);
 
     color: white;
 
@@ -923,25 +1116,27 @@ nav .contact-link {
     letter-spacing: 1px;
 
     transition: .25s;
+
 }
 
 .vinted:hover {
 
-    background: var(--marron);
+    background: var(--rojo-oscuro);
 
     transform: translateY(-2px);
+
 }
 
 
-/* ================================
+/* ==================================================
    BANNER
-================================ */
+================================================== */
 
 .banner {
 
     margin: 0 7% 90px;
 
-    min-height: 380px;
+    min-height: 390px;
 
     border-radius: 30px;
 
@@ -960,8 +1155,8 @@ nav .contact-link {
     background:
 
         linear-gradient(
-            rgba(48,58,45,.82),
-            rgba(48,58,45,.82)
+            rgba(117,27,32,.82),
+            rgba(117,27,32,.82)
         ),
 
         url("https://images.unsplash.com/photo-1598032895397-b9472444bf93?auto=format&fit=crop&w=1800&q=90");
@@ -969,26 +1164,29 @@ nav .contact-link {
     background-size: cover;
 
     background-position: center;
+
 }
 
 .banner h2 {
 
-    font-size: 43px;
+    font-size: 44px;
 
     margin: 13px 0;
+
 }
 
 .banner p {
 
-    color: #eee8dc;
+    color: #f3e8df;
 
     margin-bottom: 25px;
+
 }
 
 
-/* ================================
+/* ==================================================
    NOSOTROS
-================================ */
+================================================== */
 
 .about {
 
@@ -999,6 +1197,7 @@ nav .contact-link {
     padding: 90px 10%;
 
     text-align: center;
+
 }
 
 .about-content {
@@ -1006,28 +1205,31 @@ nav .contact-link {
     max-width: 750px;
 
     margin: auto;
+
 }
 
 .about h2 {
 
-    font-size: 43px;
+    font-size: 44px;
 
     margin: 13px 0 20px;
+
 }
 
 .about p {
 
-    color: #ded5c9;
+    color: #ded5cc;
 
     line-height: 1.8;
 
     margin-bottom: 12px;
+
 }
 
 
-/* ================================
+/* ==================================================
    CONTACTO
-================================ */
+================================================== */
 
 .contact {
 
@@ -1036,6 +1238,7 @@ nav .contact-link {
     text-align: center;
 
     background: var(--crema);
+
 }
 
 .contact h2 {
@@ -1045,6 +1248,7 @@ nav .contact-link {
     font-size: 43px;
 
     margin: 13px 0;
+
 }
 
 .contact p {
@@ -1052,6 +1256,7 @@ nav .contact-link {
     color: var(--gris);
 
     margin-bottom: 25px;
+
 }
 
 .contact-button {
@@ -1062,7 +1267,7 @@ nav .contact-link {
 
     border-radius: 50px;
 
-    background: var(--verde);
+    background: var(--rojo);
 
     color: white;
 
@@ -1071,17 +1276,19 @@ nav .contact-link {
     font-weight: bold;
 
     transition: .25s;
+
 }
 
 .contact-button:hover {
 
-    background: var(--marron);
+    background: var(--rojo-oscuro);
+
 }
 
 
-/* ================================
+/* ==================================================
    FOOTER
-================================ */
+================================================== */
 
 footer {
 
@@ -1089,9 +1296,10 @@ footer {
 
     text-align: center;
 
-    background: var(--verde-oscuro);
+    background: var(--rojo-oscuro);
 
     color: white;
+
 }
 
 .footer-logo {
@@ -1103,35 +1311,40 @@ footer {
     letter-spacing: 3px;
 
     margin-bottom: 8px;
+
 }
 
 .footer-logo span {
 
-    color: var(--mostaza);
+    color: #e9b83d;
+
 }
 
 footer p {
 
-    color: #bcb5a9;
+    color: #d7c4bd;
 
     font-size: 10px;
+
 }
 
 
-/* ================================
-   MÓVIL
-================================ */
+/* ==================================================
+   TABLET
+================================================== */
 
 @media(max-width:1050px) {
 
     .products {
 
         grid-template-columns: repeat(2,1fr);
+
     }
 
     .trust {
 
         grid-template-columns: repeat(2,1fr);
+
     }
 
     .modal-box {
@@ -1139,16 +1352,23 @@ footer p {
         grid-template-columns: 1fr;
 
         max-width: 650px;
+
     }
 
     .modal-image {
 
+        min-height: 400px;
+
         height: 400px;
 
-        min-height: 400px;
     }
+
 }
 
+
+/* ==================================================
+   MÓVIL
+================================================== */
 
 @media(max-width:650px) {
 
@@ -1159,6 +1379,7 @@ footer p {
         gap: 13px;
 
         padding: 17px;
+
     }
 
     nav {
@@ -1166,6 +1387,7 @@ footer p {
         flex-wrap: wrap;
 
         justify-content: center;
+
     }
 
     nav a {
@@ -1173,25 +1395,33 @@ footer p {
         padding: 8px 11px;
 
         font-size: 8px;
+
     }
 
     .hero {
 
-        min-height: 560px;
+        min-height: 570px;
 
-        padding: 45px 20px;
     }
 
     .hero h1 {
 
         font-size: 55px;
 
-        letter-spacing: 4px;
+        letter-spacing: 3px;
+
+    }
+
+    .hero p {
+
+        font-size: 14px;
+
     }
 
     .trust {
 
         grid-template-columns: 1fr;
+
     }
 
     .trust-item {
@@ -1199,41 +1429,49 @@ footer p {
         border-right: none;
 
         border-bottom: 1px solid var(--borde);
+
     }
 
     .section-title h2 {
 
         font-size: 34px;
+
     }
 
     .products-section {
 
         padding: 0 20px 70px;
+
     }
 
     .products {
 
         grid-template-columns: 1fr;
+
     }
 
     .product-image {
 
         height: 420px;
+
     }
 
     .banner {
 
         margin: 0 20px 70px;
+
     }
 
     .banner h2 {
 
         font-size: 34px;
+
     }
 
     .modal {
 
         padding: 10px;
+
     }
 
     .modal-box {
@@ -1241,24 +1479,29 @@ footer p {
         margin: 10px auto;
 
         border-radius: 23px;
+
     }
 
     .modal-image {
 
+        min-height: 330px;
+
         height: 330px;
 
-        min-height: 330px;
     }
 
     .modal-content {
 
         padding: 30px 20px;
+
     }
 
     .modal-content h2 {
 
         font-size: 30px;
+
     }
+
 }
 
 </style>
@@ -1269,20 +1512,20 @@ footer p {
 <body>
 
 
-<!-- =========================================
-     BARRA SUPERIOR
-========================================= -->
+<!-- ==================================================
+     BARRA
+================================================== -->
 
 <div class="top-bar">
 
-    ✦ NOVASHOPING · ROPA VINTAGE · SELECCIÓN ESPECIAL ✦
+    ✦ NOVASHOPING · ROPA VINTAGE · PIEZAS SELECCIONADAS ✦
 
 </div>
 
 
-<!-- =========================================
-     CABECERA
-========================================= -->
+<!-- ==================================================
+     HEADER
+================================================== -->
 
 <header>
 
@@ -1307,7 +1550,7 @@ footer p {
             NOSOTROS
         </a>
 
-        <a href="#contacto" class="contact-link">
+        <a href="#contacto" class="contact">
             CONTACTO
         </a>
 
@@ -1316,11 +1559,15 @@ footer p {
 </header>
 
 
-<!-- =========================================
-     PORTADA
-========================================= -->
+<!-- ==================================================
+     HERO
+================================================== -->
 
 <section class="hero" id="inicio">
+
+
+    <div class="hero-background"></div>
+
 
     <div class="hero-content">
 
@@ -1356,14 +1603,15 @@ footer p {
 
         </a>
 
+
     </div>
 
 </section>
 
 
-<!-- =========================================
+<!-- ==================================================
      CONFIANZA
-========================================= -->
+================================================== -->
 
 <section class="trust">
 
@@ -1379,7 +1627,7 @@ footer p {
         </h3>
 
         <p>
-            Seleccionadas cuidadosamente
+            Selección cuidada
         </p>
 
     </div>
@@ -1396,7 +1644,7 @@ footer p {
         </h3>
 
         <p>
-            Tallas y estado visibles
+            Talla y estado visibles
         </p>
 
     </div>
@@ -1430,7 +1678,7 @@ footer p {
         </h3>
 
         <p>
-            Piezas con personalidad
+            Prendas con personalidad
         </p>
 
     </div>
@@ -1439,15 +1687,18 @@ footer p {
 </section>
 
 
-<!-- =========================================
-     PRODUCTOS
-========================================= -->
+<!-- ==================================================
+     TITULO PRODUCTOS
+================================================== -->
 
-<section class="section-title" id="productos">
+<section
+    class="section-title"
+    id="productos">
+
 
     <div class="section-label">
 
-        NUESTRA SELECCIÓN
+        COLECCIÓN
 
     </div>
 
@@ -1461,21 +1712,26 @@ footer p {
 
     <p>
 
-        Descubre nuestra selección de ropa.
-        Pulsa en <b>VER MÁS</b> para consultar
-        todos los detalles.
+        Explora nuestra selección.
+        Pulsa <b>VER MÁS</b> para conocer
+        todos los detalles de cada prenda.
 
     </p>
 
+
 </section>
 
+
+<!-- ==================================================
+     PRODUCTOS
+================================================== -->
 
 <section class="products-section">
 
 <div class="products">
 
 
-<!-- PRODUCTO 1 -->
+<!-- 1 -->
 
 <article class="product">
 
@@ -1493,7 +1749,7 @@ footer p {
 
     <img
         src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=90"
-        alt="Camiseta">
+        alt="Camiseta vintage">
 
 </div>
 
@@ -1514,6 +1770,7 @@ footer p {
         <span class="price">
             15,00 €
         </span>
+
 
         <button
             class="more"
@@ -1537,7 +1794,7 @@ footer p {
 </article>
 
 
-<!-- PRODUCTO 2 -->
+<!-- 2 -->
 
 <article class="product">
 
@@ -1555,7 +1812,7 @@ footer p {
 
     <img
         src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=900&q=90"
-        alt="Sudadera">
+        alt="Sudadera vintage">
 
 </div>
 
@@ -1576,6 +1833,7 @@ footer p {
         <span class="price">
             25,00 €
         </span>
+
 
         <button
             class="more"
@@ -1599,7 +1857,7 @@ footer p {
 </article>
 
 
-<!-- PRODUCTO 3 -->
+<!-- 3 -->
 
 <article class="product">
 
@@ -1613,7 +1871,7 @@ footer p {
 
     <img
         src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=900&q=90"
-        alt="Pantalón">
+        alt="Pantalón vintage">
 
 </div>
 
@@ -1634,6 +1892,7 @@ footer p {
         <span class="price">
             20,00 €
         </span>
+
 
         <button
             class="more"
@@ -1657,7 +1916,7 @@ footer p {
 </article>
 
 
-<!-- PRODUCTO 4 -->
+<!-- 4 -->
 
 <article class="product">
 
@@ -1675,7 +1934,7 @@ footer p {
 
     <img
         src="https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=900&q=90"
-        alt="Chaqueta">
+        alt="Chaqueta vintage">
 
 </div>
 
@@ -1696,6 +1955,7 @@ footer p {
         <span class="price">
             35,00 €
         </span>
+
 
         <button
             class="more"
@@ -1719,7 +1979,7 @@ footer p {
 </article>
 
 
-<!-- PRODUCTO 5 -->
+<!-- 5 -->
 
 <article class="product">
 
@@ -1755,6 +2015,7 @@ footer p {
             15,00 €
         </span>
 
+
         <button
             class="more"
             onclick="openProduct(
@@ -1777,7 +2038,7 @@ footer p {
 </article>
 
 
-<!-- PRODUCTO 6 -->
+<!-- 6 -->
 
 <article class="product">
 
@@ -1795,7 +2056,7 @@ footer p {
 
     <img
         src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=900&q=90"
-        alt="Camisa">
+        alt="Camisa vintage">
 
 </div>
 
@@ -1816,6 +2077,7 @@ footer p {
         <span class="price">
             22,00 €
         </span>
+
 
         <button
             class="more"
@@ -1839,7 +2101,7 @@ footer p {
 </article>
 
 
-<!-- PRODUCTO 7 -->
+<!-- 7 -->
 
 <article class="product">
 
@@ -1853,7 +2115,7 @@ footer p {
 
     <img
         src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=900&q=90"
-        alt="Jersey">
+        alt="Jersey vintage">
 
 </div>
 
@@ -1874,6 +2136,7 @@ footer p {
         <span class="price">
             24,00 €
         </span>
+
 
         <button
             class="more"
@@ -1897,7 +2160,7 @@ footer p {
 </article>
 
 
-<!-- PRODUCTO 8 -->
+<!-- 8 -->
 
 <article class="product">
 
@@ -1915,7 +2178,7 @@ footer p {
 
     <img
         src="https://images.unsplash.com/photo-1496217590455-aa63a8350eea?auto=format&fit=crop&w=900&q=90"
-        alt="Abrigo">
+        alt="Abrigo vintage">
 
 </div>
 
@@ -1936,6 +2199,7 @@ footer p {
         <span class="price">
             40,00 €
         </span>
+
 
         <button
             class="more"
@@ -1964,9 +2228,9 @@ footer p {
 </section>
 
 
-<!-- =========================================
+<!-- ==================================================
      BANNER
-========================================= -->
+================================================== -->
 
 <section class="banner">
 
@@ -1974,9 +2238,60 @@ footer p {
 
         <div
             class="section-label"
-            style="color:#c69b3b;">
+            style="color:#e5b33e;">
 
             NOVASHOPING
+
+        </div>
+
+
+        <h2>
+
+            Encuentra tu próxima prenda.
+
+        </h2>
+
+
+        <p>
+
+            Ropa vintage seleccionada
+            y disponible en nuestro perfil.
+
+        </p>
+
+
+        <a
+            href="https://www.vinted.es/member/3155598275"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hero-button">
+
+            VER TIENDA EN VINTED →
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     NOSOTROS
+================================================== -->
+
+<section
+    class="about"
+    id="nosotros">
+
+
+    <div class="about-content">
+
+
+        <div
+            class="section-label"
+            style="color:#e5b33e;">
+
+            SOBRE NOVASHOPING
 
         </div>
 
@@ -1990,82 +2305,36 @@ footer p {
 
         <p>
 
-            Descubre nuestras prendas
-            y encuentra tu próxima pieza favorita.
-
-        </p>
-
-
-        <a
-            href="#productos"
-            class="hero-button">
-
-            VER PRENDAS →
-
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     NOSOTROS
-========================================= -->
-
-<section
-    class="about"
-    id="nosotros">
-
-    <div class="about-content">
-
-        <div
-            class="section-label"
-            style="color:#c69b3b;">
-
-            SOBRE NOSOTROS
-
-        </div>
-
-
-        <h2>
-
-            NOVASHOPING
-
-        </h2>
-
-
-        <p>
-
-            Seleccionamos prendas inspiradas
-            en diferentes épocas y estilos
-            para ofrecer una colección
-            diferente y con personalidad.
+            En NOVASHOPING seleccionamos
+            prendas inspiradas en diferentes
+            épocas y estilos.
 
         </p>
 
 
         <p>
 
-            Queremos que comprar sea sencillo:
-            información clara, fotografías
-            y acceso directo a nuestros
-            artículos en Vinted.
+            Nuestro objetivo es ofrecer
+            una experiencia sencilla y clara,
+            con información de cada prenda
+            y acceso directo a Vinted.
 
         </p>
+
 
     </div>
 
 </section>
 
 
-<!-- =========================================
+<!-- ==================================================
      CONTACTO
-========================================= -->
+================================================== -->
 
 <section
     class="contact"
     id="contacto">
+
 
     <div class="section-label">
 
@@ -2084,8 +2353,7 @@ footer p {
     <p>
 
         Si necesitas más información
-        sobre una prenda, puedes contactar
-        con nosotros.
+        sobre una prenda, escríbenos.
 
     </p>
 
@@ -2098,14 +2366,16 @@ footer p {
 
     </a>
 
+
 </section>
 
 
-<!-- =========================================
+<!-- ==================================================
      FOOTER
-========================================= -->
+================================================== -->
 
 <footer>
+
 
     <div class="footer-logo">
 
@@ -2120,12 +2390,13 @@ footer p {
 
     </p>
 
+
 </footer>
 
 
-<!-- =========================================
-     VENTANA DEL PRODUCTO
-========================================= -->
+<!-- ==================================================
+     MODAL PRODUCTO
+================================================== -->
 
 <div
     class="modal"
@@ -2190,6 +2461,7 @@ footer p {
                         class="accordion-header"
                         onclick="toggleAccordion(this)">
 
+
                         <div class="accordion-title">
 
                             <div class="accordion-icon">
@@ -2200,9 +2472,11 @@ footer p {
 
                         </div>
 
+
                         <div class="plus">
                             +
                         </div>
+
 
                     </button>
 
@@ -2218,8 +2492,7 @@ footer p {
                                     Talla
                                 </span>
 
-                                <strong
-                                    id="modalSize">
+                                <strong id="modalSize">
                                     -
                                 </strong>
 
@@ -2232,8 +2505,7 @@ footer p {
                                     Estado
                                 </span>
 
-                                <strong
-                                    id="modalCondition">
+                                <strong id="modalCondition">
                                     -
                                 </strong>
 
@@ -2243,7 +2515,9 @@ footer p {
                             <p
                                 id="modalDescription"
                                 style="margin-top:12px;">
+
                                 -
+
                             </p>
 
 
@@ -2262,6 +2536,7 @@ footer p {
                         class="accordion-header"
                         onclick="toggleAccordion(this)">
 
+
                         <div class="accordion-title">
 
                             <div class="accordion-icon">
@@ -2272,9 +2547,11 @@ footer p {
 
                         </div>
 
+
                         <div class="plus">
                             +
                         </div>
+
 
                     </button>
 
@@ -2353,6 +2630,7 @@ footer p {
                         class="accordion-header"
                         onclick="toggleAccordion(this)">
 
+
                         <div class="accordion-title">
 
                             <div class="accordion-icon">
@@ -2363,9 +2641,11 @@ footer p {
 
                         </div>
 
+
                         <div class="plus">
                             +
                         </div>
+
 
                     </button>
 
@@ -2374,14 +2654,10 @@ footer p {
 
                         <div class="accordion-inner">
 
-                            La talla indicada corresponde
-                            a la información de la prenda.
-
-                            <br><br>
-
-                            Si necesitas medidas concretas,
-                            puedes contactar con NOVASHOPING
-                            antes de realizar la compra.
+                            La talla indicada es orientativa.
+                            Para conocer las medidas exactas
+                            de la prenda, consulta el anuncio
+                            correspondiente en Vinted.
 
                         </div>
 
@@ -2390,7 +2666,7 @@ footer p {
                 </div>
 
 
-                <!-- ENVÍO -->
+                <!-- COMPRA -->
 
                 <div class="accordion">
 
@@ -2398,19 +2674,22 @@ footer p {
                         class="accordion-header"
                         onclick="toggleAccordion(this)">
 
+
                         <div class="accordion-title">
 
                             <div class="accordion-icon">
-                                📦
+                                🛍
                             </div>
 
-                            Compra y envío
+                            ¿Cómo comprar?
 
                         </div>
+
 
                         <div class="plus">
                             +
                         </div>
+
 
                     </button>
 
@@ -2420,13 +2699,12 @@ footer p {
                         <div class="accordion-inner">
 
                             La compra se realiza
-                            directamente mediante Vinted.
+                            directamente a través de Vinted.
 
                             <br><br>
 
-                            Pulsa <b>VER EN VINTED</b>
-                            para visitar nuestro perfil
-                            y consultar las prendas disponibles.
+                            Pulsa el botón de abajo para
+                            visitar el perfil de NOVASHOPING.
 
                         </div>
 
@@ -2443,6 +2721,7 @@ footer p {
                         class="accordion-header"
                         onclick="toggleAccordion(this)">
 
+
                         <div class="accordion-title">
 
                             <div class="accordion-icon">
@@ -2453,9 +2732,11 @@ footer p {
 
                         </div>
 
+
                         <div class="plus">
                             +
                         </div>
+
 
                     </button>
 
@@ -2464,14 +2745,10 @@ footer p {
 
                         <div class="accordion-inner">
 
-                            Indicamos el estado de cada
-                            prenda de forma clara.
-
-                            <br><br>
-
-                            Cualquier detalle importante
-                            debe consultarse en el anuncio
-                            correspondiente de Vinted.
+                            El estado mostrado es orientativo.
+                            Para conocer todos los detalles,
+                            revisa las fotografías y descripción
+                            del anuncio en Vinted.
 
                         </div>
 
@@ -2483,7 +2760,7 @@ footer p {
             </div>
 
 
-            <!-- BOTÓN VINTED -->
+            <!-- VINTED -->
 
             <a
                 id="vintedButton"
@@ -2504,16 +2781,20 @@ footer p {
 </div>
 
 
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
+
 <script>
 
 
-/* =========================================
-   FAVORITOS
-========================================= */
+/* FAVORITOS */
 
 function favorite(button) {
 
-    if (button.innerHTML.trim() === "♡") {
+    if (
+        button.innerHTML.trim() === "♡"
+    ) {
 
         button.innerHTML = "♥";
 
@@ -2526,9 +2807,7 @@ function favorite(button) {
 }
 
 
-/* =========================================
-   ABRIR PRODUCTO
-========================================= */
+/* ABRIR PRODUCTO */
 
 function openProduct(
     name,
@@ -2581,8 +2860,11 @@ function openProduct(
     ).style.display = "block";
 
 
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow =
+        "hidden";
 
+
+    /* cerrar desplegables */
 
     document
         .querySelectorAll(".accordion")
@@ -2599,9 +2881,7 @@ function openProduct(
 }
 
 
-/* =========================================
-   CERRAR PRODUCTO
-========================================= */
+/* CERRAR PRODUCTO */
 
 function closeProduct() {
 
@@ -2610,30 +2890,34 @@ function closeProduct() {
     ).style.display = "none";
 
 
-    document.body.style.overflow = "auto";
+    document.body.style.overflow =
+        "auto";
 
 }
 
 
-/* =========================================
-   DESPLEGABLES
-========================================= */
+/* DESPLEGABLES */
 
 function toggleAccordion(button) {
 
+
     const accordion =
         button.parentElement;
+
 
     const body =
         accordion.querySelector(
             ".accordion-body"
         );
 
+
     const alreadyOpen =
         accordion.classList.contains(
             "open"
         );
 
+
+    /* cerrar todos */
 
     document
         .querySelectorAll(".accordion")
@@ -2647,6 +2931,8 @@ function toggleAccordion(button) {
 
         });
 
+
+    /* abrir seleccionado */
 
     if (!alreadyOpen) {
 
@@ -2660,9 +2946,7 @@ function toggleAccordion(button) {
 }
 
 
-/* =========================================
-   CERRAR AL PULSAR FUERA
-========================================= */
+/* CERRAR AL PULSAR FUERA */
 
 window.addEventListener(
     "click",
@@ -2670,6 +2954,7 @@ window.addEventListener(
 
         const modal =
             document.getElementById("modal");
+
 
         if (event.target === modal) {
 
@@ -2681,9 +2966,7 @@ window.addEventListener(
 );
 
 
-/* =========================================
-   ESC PARA CERRAR
-========================================= */
+/* ESC */
 
 document.addEventListener(
     "keydown",
@@ -2697,6 +2980,7 @@ document.addEventListener(
 
     }
 );
+
 
 </script>
 
