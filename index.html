@@ -3,37 +3,31 @@
 <html lang="es">
 
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NOVASHOPING | Vintage Clothing</title>
+<title>NOVASHOPING | Ropa Vintage</title>
 
 <style>
 
-/* =========================================================
-   VARIABLES
-========================================================= */
+/* =========================
+   COLORES
+========================= */
 
 :root {
-
-    --pink: #ff5c8a;
-    --pink-dark: #e83d70;
-    --burgundy: #741735;
-    --cream: #fff8f0;
-    --cream-dark: #f4e9df;
-    --black: #171419;
-    --gray: #77717a;
-    --white: #ffffff;
-    --gold: #ffc76b;
-
+    --rosa: #ff4f81;
+    --rosa-claro: #ffe4ec;
+    --burdeos: #701b3b;
+    --crema: #fff9f4;
+    --blanco: #ffffff;
+    --negro: #171317;
+    --gris: #716b70;
+    --amarillo: #ffd166;
 }
 
-
-/* =========================================================
+/* =========================
    GENERAL
-========================================================= */
+========================= */
 
 * {
     margin: 0;
@@ -46,333 +40,177 @@ html {
 }
 
 body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--crema);
+    color: var(--negro);
+}
 
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    background: var(--cream);
-
-    color: var(--black);
-
-    overflow-x: hidden;
+button,
+a {
+    font-family: inherit;
 }
 
 a {
     text-decoration: none;
-    color: inherit;
 }
 
-button {
-    font-family: inherit;
-}
+/* =========================
+   BARRA SUPERIOR
+========================= */
 
-
-/* =========================================================
-   SCROLLBAR
-========================================================= */
-
-::-webkit-scrollbar {
-    width: 9px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--cream);
-}
-
-::-webkit-scrollbar-thumb {
-
-    background: var(--pink);
-
-    border-radius: 20px;
-}
-
-
-/* =========================================================
-   TOP BAR
-========================================================= */
-
-.top-bar {
-
-    background: var(--burgundy);
-
+.top {
+    background: var(--burdeos);
     color: white;
-
     text-align: center;
-
     padding: 10px;
-
     font-size: 10px;
-
     font-weight: bold;
-
     letter-spacing: 2px;
 }
 
-
-/* =========================================================
+/* =========================
    HEADER
-========================================================= */
+========================= */
 
 header {
-
-    height: 84px;
-
-    background: rgba(255,248,240,0.96);
-
-    backdrop-filter: blur(12px);
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    padding: 0 7%;
-
     position: sticky;
-
     top: 0;
-
     z-index: 1000;
 
-    border-bottom: 1px solid #eaded4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 7%;
+
+    background: rgba(255,249,244,.96);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid #eadfd8;
 }
 
 .logo {
-
-    font-size: 27px;
-
+    font-size: 26px;
     font-weight: 900;
-
     letter-spacing: 3px;
-
-    color: var(--black);
+    color: var(--negro);
 }
 
 .logo span {
-
-    color: var(--pink);
+    color: var(--rosa);
 }
 
 nav {
-
     display: flex;
-
-    align-items: center;
-
-    gap: 10px;
+    gap: 7px;
 }
 
 nav a {
-
     padding: 11px 17px;
-
     border-radius: 50px;
-
-    font-size: 11px;
-
+    font-size: 10px;
     font-weight: bold;
-
-    letter-spacing: 1px;
-
-    transition: 0.25s;
+    transition: .25s;
 }
 
 nav a:hover {
-
-    background: #ffe0e9;
-
-    color: var(--pink-dark);
+    background: var(--rosa-claro);
+    color: var(--rosa);
 }
 
 .nav-contact {
-
-    background: var(--pink);
-
-    color: white !important;
-
-    box-shadow:
-        0 8px 20px rgba(255,92,138,0.25);
+    background: var(--rosa);
+    color: white;
 }
 
-.nav-contact:hover {
-
-    background: var(--burgundy) !important;
-
-    color: white !important;
-}
-
-
-/* =========================================================
+/* =========================
    HERO
-========================================================= */
+========================= */
 
 .hero {
-
     min-height: 650px;
 
-    position: relative;
-
     display: flex;
-
     align-items: center;
 
-    padding: 80px 8%;
+    padding: 70px 8%;
 
     color: white;
 
     background:
-
         linear-gradient(
             90deg,
-            rgba(20,14,18,0.86),
-            rgba(20,14,18,0.35)
+            rgba(20,13,17,.9),
+            rgba(20,13,17,.35)
         ),
-
         url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=2000&q=90");
 
     background-size: cover;
-
     background-position: center;
 }
 
 .hero-content {
-
     max-width: 700px;
-
-    animation: heroIn 0.8s ease;
 }
 
-@keyframes heroIn {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            translateY(25px);
-
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            translateY(0);
-
-    }
-
-}
-
-.hero-small {
-
-    color: var(--gold);
-
+.hero-label {
+    color: var(--amarillo);
     font-size: 11px;
-
     font-weight: bold;
-
     letter-spacing: 4px;
-
     margin-bottom: 20px;
 }
 
 .hero h1 {
-
-    font-size: clamp(50px, 7vw, 85px);
-
-    line-height: 0.95;
-
-    letter-spacing: -2px;
-
+    font-size: clamp(55px, 8vw, 90px);
+    line-height: .92;
     margin-bottom: 25px;
 }
 
 .hero h1 span {
-
-    color: var(--pink);
+    color: var(--rosa);
 }
 
 .hero p {
-
-    max-width: 580px;
-
-    color: #f5e9ed;
-
-    font-size: 18px;
-
+    max-width: 600px;
     line-height: 1.7;
-
-    margin-bottom: 32px;
+    color: #f7e9ee;
+    font-size: 17px;
+    margin-bottom: 30px;
 }
 
-.main-button {
-
+.hero-button {
     display: inline-flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    background: var(--pink);
-
-    color: white;
-
     padding: 16px 25px;
-
     border-radius: 50px;
-
-    font-size: 11px;
-
+    background: var(--rosa);
+    color: white;
+    font-size: 10px;
     font-weight: bold;
-
     letter-spacing: 1px;
-
-    transition: 0.3s;
-
-    box-shadow:
-        0 12px 30px rgba(255,92,138,0.3);
+    transition: .25s;
 }
 
-.main-button:hover {
-
+.hero-button:hover {
     transform: translateY(-3px);
-
-    background: var(--gold);
-
-    color: var(--black);
-
-    box-shadow:
-        0 15px 35px rgba(255,199,107,0.3);
+    background: var(--amarillo);
+    color: var(--negro);
 }
 
-
-/* =========================================================
-   TRUST
-========================================================= */
+/* =========================
+   CONFIANZA
+========================= */
 
 .trust {
-
     display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
+    grid-template-columns: repeat(4,1fr);
     background: white;
-
-    border-bottom: 1px solid #eaded4;
 }
 
 .trust-item {
-
-    padding: 28px 15px;
-
+    padding: 27px 15px;
     text-align: center;
-
-    border-right: 1px solid #eee4dc;
+    border-right: 1px solid #eee5df;
 }
 
 .trust-item:last-child {
@@ -380,557 +218,428 @@ nav a:hover {
 }
 
 .trust-icon {
-
     width: 42px;
-
     height: 42px;
-
-    margin: 0 auto 10px;
+    margin: auto auto 10px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
-    background: #ffe0e9;
-
-    color: var(--pink-dark);
 
     border-radius: 50%;
 
-    font-size: 17px;
+    background: var(--rosa-claro);
+    color: var(--rosa);
 }
 
 .trust-item h3 {
-
     font-size: 13px;
-
     margin-bottom: 5px;
 }
 
 .trust-item p {
-
+    color: var(--gris);
     font-size: 10px;
-
-    color: var(--gray);
 }
 
-
-/* =========================================================
-   SECTION TITLE
-========================================================= */
+/* =========================
+   TITULOS
+========================= */
 
 .section-title {
-
     text-align: center;
-
-    padding:
-        95px 20px
-        45px;
+    padding: 90px 20px 45px;
 }
 
 .section-label {
-
-    color: var(--pink-dark);
-
+    color: var(--rosa);
     font-size: 10px;
-
     font-weight: bold;
-
     letter-spacing: 3px;
 }
 
 .section-title h2 {
-
     font-size: 45px;
-
-    margin: 13px 0;
+    margin: 12px 0;
 }
 
 .section-title p {
-
-    max-width: 620px;
-
+    max-width: 600px;
     margin: auto;
-
-    color: var(--gray);
-
+    color: var(--gris);
     line-height: 1.7;
 }
 
-
-/* =========================================================
-   PRODUCTS
-========================================================= */
+/* =========================
+   PRODUCTOS
+========================= */
 
 .products-section {
-
-    padding:
-        0 7%
-        100px;
+    padding: 0 7% 100px;
 }
 
 .products {
-
     display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 25px;
+    grid-template-columns: repeat(4,1fr);
+    gap: 24px;
 }
 
 .product {
-
-    background: white;
-
-    border-radius: 24px;
-
     overflow: hidden;
-
-    border: 1px solid #eaded4;
-
-    transition: 0.3s;
-
-    position: relative;
+    background: white;
+    border: 1px solid #eadfd8;
+    border-radius: 25px;
+    transition: .3s;
 }
 
 .product:hover {
-
-    transform: translateY(-8px);
-
-    box-shadow:
-        0 20px 45px
-        rgba(116,23,53,0.13);
+    transform: translateY(-7px);
+    box-shadow: 0 20px 45px rgba(80,30,50,.13);
 }
 
 .product-image {
-
-    height: 340px;
-
+    height: 330px;
     position: relative;
-
     overflow: hidden;
 }
 
 .product-image img {
-
     width: 100%;
-
     height: 100%;
-
     object-fit: cover;
-
-    transition: 0.5s;
+    transition: .5s;
 }
 
 .product:hover img {
-
     transform: scale(1.06);
 }
 
-.product-tag {
-
+.tag {
     position: absolute;
-
     top: 14px;
-
     left: 14px;
-
-    background: var(--gold);
-
-    color: var(--black);
+    z-index: 2;
 
     padding: 8px 13px;
-
     border-radius: 50px;
 
+    background: var(--amarillo);
+
     font-size: 9px;
-
     font-weight: bold;
-
-    letter-spacing: 1px;
-
-    z-index: 2;
 }
 
 .favorite {
-
     position: absolute;
-
-    right: 14px;
-
     top: 14px;
+    right: 14px;
+    z-index: 2;
 
     width: 40px;
-
     height: 40px;
 
     border: none;
-
     border-radius: 50%;
 
-    background: rgba(255,255,255,0.94);
+    background: white;
 
     cursor: pointer;
 
-    font-size: 17px;
-
-    z-index: 2;
-
-    transition: 0.2s;
-}
-
-.favorite:hover {
-
-    background: var(--pink);
-
-    color: white;
-
-    transform: scale(1.08);
+    font-size: 18px;
 }
 
 .product-info {
-
-    padding: 22px;
+    padding: 21px;
 }
 
-.product-category {
-
-    color: var(--pink-dark);
-
+.category {
+    color: var(--rosa);
     font-size: 9px;
-
     font-weight: bold;
-
     letter-spacing: 2px;
-
     margin-bottom: 7px;
 }
 
 .product h3 {
-
-    font-size: 19px;
-
-    margin-bottom: 16px;
+    font-size: 18px;
+    margin-bottom: 17px;
 }
 
 .product-bottom {
-
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
-    gap: 8px;
 }
 
 .price {
-
-    font-size: 19px;
-
+    font-size: 18px;
     font-weight: 900;
 }
 
-.more-button {
-
+.more {
     border: none;
+    border-radius: 50px;
 
-    background: var(--burgundy);
-
+    background: var(--burdeos);
     color: white;
 
     padding: 11px 16px;
 
-    border-radius: 50px;
-
-    font-size: 9px;
-
-    font-weight: bold;
-
-    letter-spacing: 0.8px;
-
     cursor: pointer;
 
-    transition: 0.25s;
+    font-size: 9px;
+    font-weight: bold;
+
+    transition: .25s;
 }
 
-.more-button:hover {
-
-    background: var(--pink);
-
+.more:hover {
+    background: var(--rosa);
     transform: translateY(-2px);
 }
 
-
-/* =========================================================
+/* =========================
    MODAL
-========================================================= */
+========================= */
 
 .modal {
-
     display: none;
 
     position: fixed;
-
     inset: 0;
-
     z-index: 5000;
-
-    background:
-        rgba(18,12,16,0.82);
-
-    backdrop-filter: blur(6px);
 
     padding: 20px;
 
     overflow-y: auto;
+
+    background: rgba(15,10,13,.84);
+    backdrop-filter: blur(7px);
 }
 
 .modal-box {
+    max-width: 950px;
+    margin: 30px auto;
 
-    max-width: 920px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 
-    margin:
-        30px auto;
-
-    background: var(--cream);
+    background: var(--crema);
 
     border-radius: 30px;
 
     overflow: hidden;
-
-    position: relative;
-
-    display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    animation: modalIn 0.25s ease;
 }
 
-@keyframes modalIn {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            translateY(20px)
-            scale(0.97);
-
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            translateY(0)
-            scale(1);
-
-    }
-
-}
-
-.modal-photo {
-
+.modal-image {
     width: 100%;
-
     height: 100%;
-
-    min-height: 570px;
-
+    min-height: 620px;
     object-fit: cover;
 }
 
-.modal-info {
-
-    padding: 45px 40px;
+.modal-content {
+    padding: 43px 38px;
+    position: relative;
 }
 
 .close {
-
     position: absolute;
-
     top: 15px;
-
     right: 15px;
 
     width: 42px;
-
     height: 42px;
 
     border: none;
-
     border-radius: 50%;
 
     background: white;
 
-    font-size: 22px;
-
     cursor: pointer;
 
-    z-index: 10;
-
-    box-shadow:
-        0 4px 20px rgba(0,0,0,0.12);
-
-    transition: 0.2s;
-}
-
-.close:hover {
-
-    background: var(--pink);
-
-    color: white;
+    font-size: 23px;
 }
 
 .modal-category {
-
-    color: var(--pink-dark);
-
+    color: var(--rosa);
     font-size: 10px;
-
     font-weight: bold;
-
     letter-spacing: 2px;
-
-    margin-bottom: 9px;
+    margin-bottom: 8px;
 }
 
-.modal-info h2 {
-
+.modal-content h2 {
     font-size: 38px;
-
-    margin-bottom: 10px;
+    margin-bottom: 7px;
 }
 
 .modal-price {
-
     font-size: 27px;
-
     font-weight: 900;
-
-    margin-bottom: 25px;
+    margin-bottom: 27px;
 }
 
+/* =========================
+   DESPLEGABLES
+========================= */
 
-/* =========================================================
-   ACCORDIONS
-========================================================= */
+.accordions {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+/* Cada desplegable es una caja */
 
 .accordion {
+    background: white;
+    border: 1px solid #e8ddd6;
+    border-radius: 17px;
+    overflow: hidden;
 
-    border-top: 1px solid #e5d9cf;
+    transition: .25s;
 }
 
-.accordion-item {
-
-    border-bottom: 1px solid #e5d9cf;
+.accordion:hover {
+    border-color: #f5b6c8;
 }
 
-.accordion-button {
+/* Botón */
 
+.accordion-header {
     width: 100%;
 
-    padding: 17px 0;
-
-    background: transparent;
+    padding: 17px;
 
     border: none;
 
+    background: white;
+
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
     cursor: pointer;
 
-    font-size: 12px;
-
-    font-weight: bold;
-
-    color: var(--black);
-
     text-align: left;
+
+    font-size: 12px;
+    font-weight: bold;
 }
 
-.accordion-button span {
+/* Parte izquierda */
 
-    width: 30px;
+.accordion-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 
-    height: 30px;
+.accordion-icon {
+    width: 34px;
+    height: 34px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
-    background: #ffe0e9;
-
-    color: var(--pink-dark);
 
     border-radius: 50%;
 
-    font-size: 17px;
+    background: var(--rosa-claro);
+    color: var(--rosa);
 
-    transition: 0.2s;
+    font-size: 16px;
 }
 
-.accordion-content {
+/* Botón + */
 
+.plus {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--burdeos);
+    color: white;
+
+    font-size: 18px;
+
+    transition: .3s;
+}
+
+/* Contenido cerrado */
+
+.accordion-body {
     max-height: 0;
-
     overflow: hidden;
 
-    transition:
-        max-height 0.3s ease;
-
+    transition: max-height .35s ease;
 }
 
-.accordion-content-inner {
+/* Contenido */
 
-    padding:
-        0 0
-        18px;
+.accordion-inner {
+    padding: 0 17px 18px;
 
-    color: var(--gray);
+    color: var(--gris);
 
-    font-size: 13px;
+    font-size: 12px;
 
     line-height: 1.7;
 }
 
-.accordion-item.active
-.accordion-button span {
+/* Cuando está abierto */
 
-    transform: rotate(45deg);
-
-    background: var(--pink);
-
-    color: white;
+.accordion.open {
+    border-color: var(--rosa);
 }
 
+.accordion.open .accordion-header {
+    background: #fff7fa;
+}
 
-/* =========================================================
-   REVIEWS
-========================================================= */
+.accordion.open .plus {
+    background: var(--rosa);
+    transform: rotate(45deg);
+}
+
+/* =========================
+   DATOS
+========================= */
+
+.data-row {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 9px 0;
+
+    border-bottom: 1px solid #eee5df;
+}
+
+.data-row:last-child {
+    border-bottom: none;
+}
+
+.data-row strong {
+    color: var(--negro);
+}
+
+/* =========================
+   RESEÑAS
+========================= */
 
 .review {
+    padding: 12px;
+    margin-bottom: 9px;
 
-    background: white;
+    background: var(--crema);
 
-    border-radius: 16px;
-
-    padding: 15px;
-
-    margin-bottom: 10px;
+    border-radius: 12px;
 }
 
 .review:last-child {
@@ -938,108 +647,65 @@ nav a:hover {
 }
 
 .stars {
-
-    color: #ffb52e;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 5px;
+    color: #f2ad28;
+    margin-bottom: 4px;
 }
 
 .review strong {
-
-    font-size: 12px;
+    font-size: 11px;
+    color: var(--negro);
 }
 
 .review p {
-
-    margin-top: 5px;
-
+    margin-top: 4px;
     font-size: 11px;
-
-    color: var(--gray);
 }
 
+/* =========================
+   VINTED
+========================= */
 
-/* =========================================================
-   VINTED BUTTON
-========================================================= */
-
-.vinted-button {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 9px;
-
+.vinted {
     width: 100%;
 
-    margin-top: 24px;
+    margin-top: 22px;
 
-    background: var(--pink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    color: white;
-
-    padding: 16px;
+    padding: 17px;
 
     border-radius: 50px;
 
-    font-size: 11px;
+    background: var(--rosa);
+    color: white;
 
+    font-size: 10px;
     font-weight: bold;
-
     letter-spacing: 1px;
 
-    box-shadow:
-        0 10px 25px
-        rgba(255,92,138,0.25);
-
-    transition: 0.25s;
+    transition: .25s;
 }
 
-.vinted-button:hover {
-
-    background: var(--burgundy);
-
+.vinted:hover {
+    background: var(--burdeos);
     transform: translateY(-2px);
 }
 
-
-/* =========================================================
+/* =========================
    BANNER
-========================================================= */
+========================= */
 
 .banner {
-
-    margin:
-        0 7%
-        100px;
+    margin: 0 7% 90px;
 
     min-height: 350px;
 
     border-radius: 30px;
 
-    background:
-
-        linear-gradient(
-            100deg,
-            rgba(116,23,55,0.94),
-            rgba(232,61,112,0.68)
-        ),
-
-        url("https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1800&q=90");
-
-    background-size: cover;
-
-    background-position: center;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     text-align: center;
@@ -1047,390 +713,267 @@ nav a:hover {
     color: white;
 
     padding: 30px;
+
+    background:
+        linear-gradient(
+            100deg,
+            rgba(112,27,59,.95),
+            rgba(255,79,129,.75)
+        ),
+        url("https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1800&q=90");
+
+    background-size: cover;
+    background-position: center;
 }
 
 .banner h2 {
-
-    font-size: 45px;
-
-    margin:
-        13px 0;
+    font-size: 43px;
+    margin: 13px 0;
 }
 
 .banner p {
-
-    color: #ffe9ef;
-
     margin-bottom: 25px;
+    color: #ffe8ef;
 }
 
-
-/* =========================================================
-   ABOUT
-========================================================= */
+/* =========================
+   NOSOTROS
+========================= */
 
 .about {
-
-    background: var(--black);
-
+    background: var(--negro);
     color: white;
 
-    padding:
-        95px 10%;
+    padding: 90px 10%;
 
     text-align: center;
 }
 
 .about-content {
-
-    max-width: 760px;
-
+    max-width: 750px;
     margin: auto;
 }
 
-.about .section-label {
-
-    color: var(--gold);
-}
-
 .about h2 {
-
-    font-size: 45px;
-
-    margin:
-        13px 0
-        20px;
+    font-size: 43px;
+    margin: 13px 0 20px;
 }
 
 .about p {
-
-    color: #c6c0c4;
-
+    color: #c7c1c5;
     line-height: 1.8;
-
-    margin-bottom: 13px;
+    margin-bottom: 12px;
 }
 
-
-/* =========================================================
-   CONTACT
-========================================================= */
+/* =========================
+   CONTACTO
+========================= */
 
 .contact {
-
-    padding:
-        95px 20px;
+    padding: 90px 20px;
 
     text-align: center;
 
     background:
         linear-gradient(
             135deg,
-            #fff8f0,
-            #ffe9ef
+            #fff9f4,
+            #ffe7ee
         );
 }
 
 .contact h2 {
-
     font-size: 43px;
-
-    margin:
-        13px 0;
+    margin: 13px 0;
 }
 
 .contact p {
-
-    color: var(--gray);
-
+    color: var(--gris);
     margin-bottom: 25px;
 }
 
 .contact-button {
-
     display: inline-flex;
 
-    align-items: center;
-
-    gap: 8px;
-
-    background: var(--pink);
-
-    color: white;
-
-    padding:
-        15px 25px;
+    padding: 15px 25px;
 
     border-radius: 50px;
 
-    font-size: 11px;
+    background: var(--rosa);
+    color: white;
 
+    font-size: 10px;
     font-weight: bold;
 
-    letter-spacing: 1px;
-
-    transition: 0.25s;
+    transition: .25s;
 }
 
 .contact-button:hover {
-
-    background: var(--burgundy);
-
-    transform: translateY(-2px);
+    background: var(--burdeos);
 }
 
-
-/* =========================================================
+/* =========================
    FOOTER
-========================================================= */
+========================= */
 
 footer {
-
-    background: #100e10;
-
-    color: white;
+    padding: 40px 20px;
 
     text-align: center;
 
-    padding: 42px 20px;
+    background: #100e10;
+    color: white;
 }
 
 .footer-logo {
-
-    font-size: 24px;
-
+    font-size: 23px;
     font-weight: 900;
-
     letter-spacing: 3px;
-
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .footer-logo span {
-
-    color: var(--pink);
+    color: var(--rosa);
 }
 
 footer p {
-
     color: #777;
-
     font-size: 10px;
 }
 
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
+/* =========================
+   MÓVIL
+========================= */
 
 @media(max-width:1050px) {
 
     .products {
-
-        grid-template-columns:
-            repeat(2,1fr);
+        grid-template-columns: repeat(2,1fr);
     }
 
     .trust {
-
-        grid-template-columns:
-            repeat(2,1fr);
+        grid-template-columns: repeat(2,1fr);
     }
 
     .modal-box {
-
-        grid-template-columns:
-            1fr;
-
+        grid-template-columns: 1fr;
         max-width: 650px;
     }
 
-    .modal-photo {
-
-        min-height: 400px;
-
+    .modal-image {
         height: 400px;
+        min-height: 400px;
     }
-
 }
-
 
 @media(max-width:650px) {
 
     header {
-
-        height: auto;
-
-        padding:
-            18px;
-
         flex-direction: column;
-
         gap: 13px;
+        padding: 17px;
     }
 
     nav {
-
         flex-wrap: wrap;
-
         justify-content: center;
-
-        gap: 4px;
     }
 
     nav a {
-
-        padding:
-            9px 12px;
-
-        font-size: 9px;
+        padding: 8px 11px;
+        font-size: 8px;
     }
 
     .hero {
-
         min-height: 570px;
-
-        padding:
-            50px 25px;
+        padding: 45px 25px;
     }
 
     .hero h1 {
-
-        font-size: 53px;
-    }
-
-    .hero p {
-
-        font-size: 15px;
+        font-size: 55px;
     }
 
     .trust {
-
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
 
     .trust-item {
-
         border-right: none;
-
-        border-bottom:
-            1px solid #eee4dc;
-    }
-
-    .section-title {
-
-        padding-top: 70px;
+        border-bottom: 1px solid #eee5df;
     }
 
     .section-title h2 {
-
         font-size: 34px;
     }
 
     .products-section {
-
-        padding:
-            0 20px
-            75px;
+        padding: 0 20px 70px;
     }
 
     .products {
-
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
 
     .product-image {
-
-        height: 430px;
+        height: 420px;
     }
 
     .banner {
-
-        margin:
-            0 20px
-            75px;
-
-        min-height: 380px;
+        margin: 0 20px 70px;
     }
 
     .banner h2 {
-
         font-size: 34px;
     }
 
     .modal {
-
-        padding:
-            10px;
+        padding: 10px;
     }
 
     .modal-box {
-
-        margin:
-            10px auto;
-
-        border-radius:
-            24px;
+        margin: 10px auto;
+        border-radius: 23px;
     }
 
-    .modal-photo {
-
-        min-height: 330px;
-
+    .modal-image {
         height: 330px;
+        min-height: 330px;
     }
 
-    .modal-info {
-
-        padding:
-            30px 22px;
+    .modal-content {
+        padding: 30px 20px;
     }
 
-    .modal-info h2 {
-
-        font-size: 29px;
+    .modal-content h2 {
+        font-size: 30px;
     }
-
 }
 
-
-/* =========================================================
-   FIN
-========================================================= */
-
 </style>
-
 </head>
 
 
 <body>
 
 
-<!-- =====================================================
-     TOP
-===================================================== -->
+<!-- =========================
+     BARRA
+========================= -->
 
-<div class="top-bar">
-
+<div class="top">
     ✦ NOVASHOPING · ROPA VINTAGE · ESTILO ÚNICO ✦
-
 </div>
 
 
-<!-- =====================================================
+<!-- =========================
      HEADER
-===================================================== -->
+========================= -->
 
 <header>
 
     <a href="#inicio" class="logo">
-
         NOVA<span>SHOPING</span>
-
     </a>
-
 
     <nav>
 
@@ -1446,12 +989,8 @@ footer p {
             NOSOTROS
         </a>
 
-        <a
-            href="#contacto"
-            class="nav-contact">
-
+        <a href="#contacto" class="nav-contact">
             CONTACTO
-
         </a>
 
     </nav>
@@ -1459,47 +998,30 @@ footer p {
 </header>
 
 
-<!-- =====================================================
+<!-- =========================
      HERO
-===================================================== -->
+========================= -->
 
-<section
-    class="hero"
-    id="inicio">
+<section class="hero" id="inicio">
 
     <div class="hero-content">
 
-        <div class="hero-small">
-
+        <div class="hero-label">
             NOVASHOPING
-
         </div>
 
         <h1>
-
             Viste<br>
-
             <span>diferente.</span>
-
         </h1>
 
         <p>
-
-            Ropa con personalidad,
-            inspiración vintage y
-            prendas seleccionadas para
-            crear un estilo único.
-
+            Ropa con personalidad, inspiración vintage
+            y prendas seleccionadas para crear un estilo único.
         </p>
 
-        <a
-            href="#productos"
-            class="main-button">
-
-            DESCUBRIR PRENDAS
-
-            <span>→</span>
-
+        <a href="#productos" class="hero-button">
+            DESCUBRIR PRENDAS →
         </a>
 
     </div>
@@ -1507,12 +1029,11 @@ footer p {
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      CONFIANZA
-===================================================== -->
+========================= -->
 
 <section class="trust">
-
 
     <div class="trust-item">
 
@@ -1542,7 +1063,7 @@ footer p {
         </h3>
 
         <p>
-            Talla, estado y detalles
+            Talla y estado
         </p>
 
     </div>
@@ -1555,11 +1076,11 @@ footer p {
         </div>
 
         <h3>
-            Compra mediante Vinted
+            Compra segura
         </h3>
 
         <p>
-            Compra desde el anuncio
+            A través de Vinted
         </p>
 
     </div>
@@ -1581,77 +1102,62 @@ footer p {
 
     </div>
 
-
 </section>
 
 
-<!-- =====================================================
-     PRODUCTOS
-===================================================== -->
+<!-- =========================
+     TITULO
+========================= -->
 
-<section
-    class="section-title"
-    id="productos">
+<section class="section-title" id="productos">
 
     <div class="section-label">
-
         NUEVA SELECCIÓN
-
     </div>
 
     <h2>
-
         Prendas destacadas
-
     </h2>
 
     <p>
-
-        Descubre nuestra selección de ropa.
-        Pulsa en "VER MÁS" para consultar
+        Pulsa en <b>VER MÁS</b> para consultar
         toda la información de cada prenda.
-
     </p>
 
 </section>
 
+
+<!-- =========================
+     PRODUCTOS
+========================= -->
 
 <section class="products-section">
 
 <div class="products">
 
 
-<!-- =====================================================
-     PRODUCTO 1
-===================================================== -->
+<!-- PRODUCTO 1 -->
 
 <article class="product">
 
     <div class="product-image">
 
-        <div class="product-tag">
+        <div class="tag">
             DESTACADO
         </div>
 
-        <button
-            class="favorite"
-            onclick="this.innerHTML =
-            this.innerHTML === '♡' ? '♥' : '♡'">
-
+        <button class="favorite"
+        onclick="favorite(this)">
             ♡
-
         </button>
 
-        <img
-            src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=90"
-            alt="Camiseta">
+        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=90">
 
     </div>
 
-
     <div class="product-info">
 
-        <div class="product-category">
+        <div class="category">
             CAMISETA
         </div>
 
@@ -1665,20 +1171,17 @@ footer p {
                 15,00 €
             </span>
 
-            <button
-                class="more-button"
-                onclick="openProduct(
-                'Camiseta',
-                '15,00 €',
-                'M',
-                'Muy buen estado',
-                'Camiseta de estilo vintage, cómoda y fácil de combinar.',
-                'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=90',
-                'PEGA_AQUI_TU_ENLACE_VINTED'
-                )">
-
+            <button class="more"
+            onclick="openProduct(
+            'Camiseta',
+            '15,00 €',
+            'M',
+            'Muy buen estado',
+            'Camiseta de inspiración vintage, cómoda y fácil de combinar.',
+            'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=90',
+            'PEGA_AQUI_TU_ENLACE_VINTED'
+            )">
                 VER MÁS
-
             </button>
 
         </div>
@@ -1688,37 +1191,28 @@ footer p {
 </article>
 
 
-<!-- =====================================================
-     PRODUCTO 2
-===================================================== -->
+<!-- PRODUCTO 2 -->
 
 <article class="product">
 
     <div class="product-image">
 
-        <div class="product-tag">
+        <div class="tag">
             POPULAR
         </div>
 
-        <button
-            class="favorite"
-            onclick="this.innerHTML =
-            this.innerHTML === '♡' ? '♥' : '♡'">
-
+        <button class="favorite"
+        onclick="favorite(this)">
             ♡
-
         </button>
 
-        <img
-            src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=900&q=90"
-            alt="Sudadera">
+        <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=900&q=90">
 
     </div>
 
-
     <div class="product-info">
 
-        <div class="product-category">
+        <div class="category">
             SUDADERA
         </div>
 
@@ -1732,20 +1226,17 @@ footer p {
                 25,00 €
             </span>
 
-            <button
-                class="more-button"
-                onclick="openProduct(
-                'Sudadera',
-                '25,00 €',
-                'M',
-                'Muy buen estado',
-                'Sudadera cómoda con inspiración vintage y diseño versátil.',
-                'https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=900&q=90',
-                'PEGA_AQUI_TU_ENLACE_VINTED'
-                )">
-
+            <button class="more"
+            onclick="openProduct(
+            'Sudadera',
+            '25,00 €',
+            'M',
+            'Muy buen estado',
+            'Sudadera cómoda con inspiración vintage.',
+            'https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=900&q=90',
+            'PEGA_AQUI_TU_ENLACE_VINTED'
+            )">
                 VER MÁS
-
             </button>
 
         </div>
@@ -1755,33 +1246,24 @@ footer p {
 </article>
 
 
-<!-- =====================================================
-     PRODUCTO 3
-===================================================== -->
+<!-- PRODUCTO 3 -->
 
 <article class="product">
 
     <div class="product-image">
 
-        <button
-            class="favorite"
-            onclick="this.innerHTML =
-            this.innerHTML === '♡' ? '♥' : '♡'">
-
+        <button class="favorite"
+        onclick="favorite(this)">
             ♡
-
         </button>
 
-        <img
-            src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=900&q=90"
-            alt="Pantalón">
+        <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=900&q=90">
 
     </div>
 
-
     <div class="product-info">
 
-        <div class="product-category">
+        <div class="category">
             PANTALÓN
         </div>
 
@@ -1795,20 +1277,17 @@ footer p {
                 20,00 €
             </span>
 
-            <button
-                class="more-button"
-                onclick="openProduct(
-                'Pantalón',
-                '20,00 €',
-                '38',
-                'Buen estado',
-                'Pantalón de inspiración vintage, cómodo y sencillo de combinar.',
-                'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=900&q=90',
-                'PEGA_AQUI_TU_ENLACE_VINTED'
-                )">
-
+            <button class="more"
+            onclick="openProduct(
+            'Pantalón',
+            '20,00 €',
+            '38',
+            'Buen estado',
+            'Pantalón de inspiración vintage.',
+            'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=900&q=90',
+            'PEGA_AQUI_TU_ENLACE_VINTED'
+            )">
                 VER MÁS
-
             </button>
 
         </div>
@@ -1818,37 +1297,28 @@ footer p {
 </article>
 
 
-<!-- =====================================================
-     PRODUCTO 4
-===================================================== -->
+<!-- PRODUCTO 4 -->
 
 <article class="product">
 
     <div class="product-image">
 
-        <div class="product-tag">
+        <div class="tag">
             DESTACADO
         </div>
 
-        <button
-            class="favorite"
-            onclick="this.innerHTML =
-            this.innerHTML === '♡' ? '♥' : '♡'">
-
+        <button class="favorite"
+        onclick="favorite(this)">
             ♡
-
         </button>
 
-        <img
-            src="https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=900&q=90"
-            alt="Chaqueta">
+        <img src="https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=900&q=90">
 
     </div>
 
-
     <div class="product-info">
 
-        <div class="product-category">
+        <div class="category">
             CHAQUETA
         </div>
 
@@ -1862,20 +1332,17 @@ footer p {
                 35,00 €
             </span>
 
-            <button
-                class="more-button"
-                onclick="openProduct(
-                'Chaqueta',
-                '35,00 €',
-                'L',
-                'Buen estado',
-                'Chaqueta de inspiración vintage con diseño atemporal.',
-                'https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=900&q=90',
-                'PEGA_AQUI_TU_ENLACE_VINTED'
-                )">
-
+            <button class="more"
+            onclick="openProduct(
+            'Chaqueta',
+            '35,00 €',
+            'L',
+            'Buen estado',
+            'Chaqueta de inspiración vintage con diseño atemporal.',
+            'https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=900&q=90',
+            'PEGA_AQUI_TU_ENLACE_VINTED'
+            )">
                 VER MÁS
-
             </button>
 
         </div>
@@ -1885,33 +1352,24 @@ footer p {
 </article>
 
 
-<!-- =====================================================
-     PRODUCTO 5
-===================================================== -->
+<!-- PRODUCTO 5 -->
 
 <article class="product">
 
     <div class="product-image">
 
-        <button
-            class="favorite"
-            onclick="this.innerHTML =
-            this.innerHTML === '♡' ? '♥' : '♡'">
-
+        <button class="favorite"
+        onclick="favorite(this)">
             ♡
-
         </button>
 
-        <img
-            src="https://images.unsplash.com/photo-1583743814966-8936f37f4678?auto=format&fit=crop&w=900&q=90"
-            alt="Camiseta negra">
+        <img src="https://images.unsplash.com/photo-1583743814966-8936f37f4678?auto=format&fit=crop&w=900&q=90">
 
     </div>
 
-
     <div class="product-info">
 
-        <div class="product-category">
+        <div class="category">
             CAMISETA
         </div>
 
@@ -1925,20 +1383,17 @@ footer p {
                 15,00 €
             </span>
 
-            <button
-                class="more-button"
-                onclick="openProduct(
-                'Camiseta Negra',
-                '15,00 €',
-                'M',
-                'Muy buen estado',
-                'Camiseta negra básica con estética vintage y diseño versátil.',
-                'https://images.unsplash.com/photo-1583743814966-8936f37f4678?auto=format&fit=crop&w=900&q=90',
-                'PEGA_AQUI_TU_ENLACE_VINTED'
-                )">
-
+            <button class="more"
+            onclick="openProduct(
+            'Camiseta Negra',
+            '15,00 €',
+            'M',
+            'Muy buen estado',
+            'Camiseta negra básica con estética vintage.',
+            'https://images.unsplash.com/photo-1583743814966-8936f37f4678?auto=format&fit=crop&w=900&q=90',
+            'PEGA_AQUI_TU_ENLACE_VINTED'
+            )">
                 VER MÁS
-
             </button>
 
         </div>
@@ -1948,37 +1403,28 @@ footer p {
 </article>
 
 
-<!-- =====================================================
-     PRODUCTO 6
-===================================================== -->
+<!-- PRODUCTO 6 -->
 
 <article class="product">
 
     <div class="product-image">
 
-        <div class="product-tag">
+        <div class="tag">
             NUEVO
         </div>
 
-        <button
-            class="favorite"
-            onclick="this.innerHTML =
-            this.innerHTML === '♡' ? '♥' : '♡'">
-
+        <button class="favorite"
+        onclick="favorite(this)">
             ♡
-
         </button>
 
-        <img
-            src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=900&q=90"
-            alt="Camisa">
+        <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=900&q=90">
 
     </div>
 
-
     <div class="product-info">
 
-        <div class="product-category">
+        <div class="category">
             CAMISA
         </div>
 
@@ -1992,20 +1438,17 @@ footer p {
                 22,00 €
             </span>
 
-            <button
-                class="more-button"
-                onclick="openProduct(
-                'Camisa',
-                '22,00 €',
-                'M',
-                'Buen estado',
-                'Camisa clásica con estética vintage. Perfecta para combinar.',
-                'https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=900&q=90',
-                'PEGA_AQUI_TU_ENLACE_VINTED'
-                )">
-
+            <button class="more"
+            onclick="openProduct(
+            'Camisa',
+            '22,00 €',
+            'M',
+            'Buen estado',
+            'Camisa clásica con estética vintage.',
+            'https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=900&q=90',
+            'PEGA_AQUI_TU_ENLACE_VINTED'
+            )">
                 VER MÁS
-
             </button>
 
         </div>
@@ -2015,33 +1458,24 @@ footer p {
 </article>
 
 
-<!-- =====================================================
-     PRODUCTO 7
-===================================================== -->
+<!-- PRODUCTO 7 -->
 
 <article class="product">
 
     <div class="product-image">
 
-        <button
-            class="favorite"
-            onclick="this.innerHTML =
-            this.innerHTML === '♡' ? '♥' : '♡'">
-
+        <button class="favorite"
+        onclick="favorite(this)">
             ♡
-
         </button>
 
-        <img
-            src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=900&q=90"
-            alt="Jersey">
+        <img src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=900&q=90">
 
     </div>
 
-
     <div class="product-info">
 
-        <div class="product-category">
+        <div class="category">
             JERSEY
         </div>
 
@@ -2055,20 +1489,17 @@ footer p {
                 24,00 €
             </span>
 
-            <button
-                class="more-button"
-                onclick="openProduct(
-                'Jersey',
-                '24,00 €',
-                'M',
-                'Muy buen estado',
-                'Jersey cómodo con estética vintage y diseño sencillo.',
-                'https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=900&q=90',
-                'PEGA_AQUI_TU_ENLACE_VINTED'
-                )">
-
+            <button class="more"
+            onclick="openProduct(
+            'Jersey',
+            '24,00 €',
+            'M',
+            'Muy buen estado',
+            'Jersey cómodo con estética vintage.',
+            'https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=900&q=90',
+            'PEGA_AQUI_TU_ENLACE_VINTED'
+            )">
                 VER MÁS
-
             </button>
 
         </div>
@@ -2078,37 +1509,28 @@ footer p {
 </article>
 
 
-<!-- =====================================================
-     PRODUCTO 8
-===================================================== -->
+<!-- PRODUCTO 8 -->
 
 <article class="product">
 
     <div class="product-image">
 
-        <div class="product-tag">
+        <div class="tag">
             DESTACADO
         </div>
 
-        <button
-            class="favorite"
-            onclick="this.innerHTML =
-            this.innerHTML === '♡' ? '♥' : '♡'">
-
+        <button class="favorite"
+        onclick="favorite(this)">
             ♡
-
         </button>
 
-        <img
-            src="https://images.unsplash.com/photo-1496217590455-aa63a8350eea?auto=format&fit=crop&w=900&q=90"
-            alt="Abrigo">
+        <img src="https://images.unsplash.com/photo-1496217590455-aa63a8350eea?auto=format&fit=crop&w=900&q=90">
 
     </div>
 
-
     <div class="product-info">
 
-        <div class="product-category">
+        <div class="category">
             ABRIGO
         </div>
 
@@ -2122,20 +1544,17 @@ footer p {
                 40,00 €
             </span>
 
-            <button
-                class="more-button"
-                onclick="openProduct(
-                'Abrigo',
-                '40,00 €',
-                'L',
-                'Buen estado',
-                'Abrigo de inspiración vintage con diseño elegante y atemporal.',
-                'https://images.unsplash.com/photo-1496217590455-aa63a8350eea?auto=format&fit=crop&w=900&q=90',
-                'PEGA_AQUI_TU_ENLACE_VINTED'
-                )">
-
+            <button class="more"
+            onclick="openProduct(
+            'Abrigo',
+            '40,00 €',
+            'L',
+            'Buen estado',
+            'Abrigo de inspiración vintage.',
+            'https://images.unsplash.com/photo-1496217590455-aa63a8350eea?auto=format&fit=crop&w=900&q=90',
+            'PEGA_AQUI_TU_ENLACE_VINTED'
+            )">
                 VER MÁS
-
             </button>
 
         </div>
@@ -2146,44 +1565,32 @@ footer p {
 
 
 </div>
-
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      BANNER
-===================================================== -->
+========================= -->
 
 <section class="banner">
 
     <div>
 
-        <div class="section-label"
-             style="color:#ffc76b;">
-
+        <div class="section-label" style="color:#ffd166;">
             NOVASHOPING
-
         </div>
 
         <h2>
-
-            Encuentra algo que sea muy tú.
-
+            Encuentra algo muy tú.
         </h2>
 
         <p>
-
             Ropa con personalidad para
             personas con personalidad.
-
         </p>
 
-        <a
-            href="#productos"
-            class="main-button">
-
+        <a href="#productos" class="hero-button">
             VER PRENDAS →
-
         </a>
 
     </div>
@@ -2191,42 +1598,31 @@ footer p {
 </section>
 
 
-<!-- =====================================================
-     ABOUT
-===================================================== -->
+<!-- =========================
+     NOSOTROS
+========================= -->
 
-<section
-    class="about"
-    id="nosotros">
+<section class="about" id="nosotros">
 
     <div class="about-content">
 
-        <div class="section-label">
-
+        <div class="section-label" style="color:#ffd166;">
             SOBRE NOVASHOPING
-
         </div>
 
         <h2>
-
             Moda con personalidad.
-
         </h2>
 
         <p>
-
-            En NOVASHOPING buscamos prendas
-            diferentes, con personalidad y
-            una estética inspirada en la moda vintage.
-
+            En NOVASHOPING seleccionamos prendas
+            con personalidad y una estética inspirada
+            en la moda vintage.
         </p>
 
         <p>
-
-            Queremos que puedas descubrir cada
-            prenda fácilmente, conocer sus detalles
-            y comprarla directamente desde Vinted.
-
+            Consulta cada prenda y accede directamente
+            a su anuncio en Vinted.
         </p>
 
     </div>
@@ -2234,33 +1630,23 @@ footer p {
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      CONTACTO
-===================================================== -->
+========================= -->
 
-<section
-    class="contact"
-    id="contacto">
+<section class="contact" id="contacto">
 
     <div class="section-label">
-
         CONTACTO
-
     </div>
 
     <h2>
-
         ¿Tienes alguna pregunta?
-
     </h2>
 
     <p>
-
         Estamos aquí para ayudarte.
-
     </p>
-
-    <!-- CAMBIA TU EMAIL -->
 
     <a
         href="mailto:TUEMAIL@EJEMPLO.COM"
@@ -2273,159 +1659,127 @@ footer p {
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      FOOTER
-===================================================== -->
+========================= -->
 
 <footer>
 
     <div class="footer-logo">
-
         NOVA<span>SHOPING</span>
-
     </div>
 
     <p>
-
         © 2026 NOVASHOPING · Ropa vintage
-
     </p>
 
 </footer>
 
 
-<!-- =====================================================
-     MODAL PRODUCTO
-===================================================== -->
+<!-- =========================
+     MODAL
+========================= -->
 
-<div
-    id="productModal"
-    class="modal">
-
+<div class="modal" id="modal">
 
     <div class="modal-box">
 
-
-        <button
-            class="close"
-            onclick="closeProduct()">
-
+        <button class="close"
+        onclick="closeProduct()">
             ×
-
         </button>
 
-
         <img
-            id="modalPhoto"
-            class="modal-photo"
+            id="modalImage"
+            class="modal-image"
             src=""
             alt="Producto">
 
-
-        <div class="modal-info">
-
+        <div class="modal-content">
 
             <div
                 id="modalCategory"
                 class="modal-category">
-
-                PRODUCTO
-
+                PRENDA
             </div>
 
-
             <h2 id="modalName">
-
                 Producto
-
             </h2>
-
 
             <div
                 id="modalPrice"
                 class="modal-price">
-
                 0,00 €
-
             </div>
 
 
-            <!-- =================================================
+            <!-- ===================================
                  DESPLEGABLES
-            ================================================= -->
+            =================================== -->
 
-            <div class="accordion">
+            <div class="accordions">
 
 
-                <!-- INFORMACIÓN -->
+                <!-- 1 INFORMACIÓN -->
 
-                <div class="accordion-item">
+                <div class="accordion">
 
                     <button
-                        class="accordion-button"
+                        class="accordion-header"
                         onclick="toggleAccordion(this)">
 
-                        <span>
+                        <div class="accordion-title">
 
-                            Información importante
+                            <div class="accordion-icon">
+                                ℹ
+                            </div>
 
-                        </span>
+                            <span>
+                                Información importante
+                            </span>
 
-                        <span>+</span>
+                        </div>
+
+                        <div class="plus">
+                            +
+                        </div>
 
                     </button>
 
 
-                    <div class="accordion-content">
+                    <div class="accordion-body">
 
-                        <div
-                            class="accordion-content-inner">
+                        <div class="accordion-inner">
 
-                            <div
-                                class="info-row">
+                            <div class="data-row">
 
                                 <span>
                                     Talla
                                 </span>
 
-                                <strong
-                                    id="modalSize">
-
+                                <strong id="modalSize">
                                     -
-
                                 </strong>
 
                             </div>
 
-
-                            <br>
-
-
-                            <div
-                                class="info-row">
+                            <div class="data-row">
 
                                 <span>
                                     Estado
                                 </span>
 
-                                <strong
-                                    id="modalCondition">
-
+                                <strong id="modalCondition">
                                     -
-
                                 </strong>
 
                             </div>
 
-
-                            <br>
-
-
                             <p
-                                id="modalDescription">
-
-                                Descripción.
-
+                                id="modalDescription"
+                                style="margin-top:12px;">
+                                -
                             </p>
 
                         </div>
@@ -2435,37 +1789,42 @@ footer p {
                 </div>
 
 
-                <!-- RESEÑAS -->
+                <!-- 2 RESEÑAS -->
 
-                <div class="accordion-item">
+                <div class="accordion">
 
                     <button
-                        class="accordion-button"
+                        class="accordion-header"
                         onclick="toggleAccordion(this)">
 
-                        <span>
+                        <div class="accordion-title">
 
-                            Reseñas de compradores
+                            <div class="accordion-icon">
+                                ★
+                            </div>
 
-                        </span>
+                            <span>
+                                Reseñas
+                            </span>
 
-                        <span>+</span>
+                        </div>
+
+                        <div class="plus">
+                            +
+                        </div>
 
                     </button>
 
 
-                    <div class="accordion-content">
+                    <div class="accordion-body">
 
-                        <div
-                            class="accordion-content-inner">
+                        <div class="accordion-inner">
 
 
                             <div class="review">
 
                                 <div class="stars">
-
                                     ★★★★★
-
                                 </div>
 
                                 <strong>
@@ -2473,11 +1832,8 @@ footer p {
                                 </strong>
 
                                 <p>
-
                                     Todo perfecto,
-                                    exactamente como
-                                    en las fotos.
-
+                                    exactamente como en las fotos.
                                 </p>
 
                             </div>
@@ -2486,9 +1842,7 @@ footer p {
                             <div class="review">
 
                                 <div class="stars">
-
                                     ★★★★★
-
                                 </div>
 
                                 <strong>
@@ -2496,10 +1850,8 @@ footer p {
                                 </strong>
 
                                 <p>
-
                                     Muy buena comunicación
                                     y envío rápido.
-
                                 </p>
 
                             </div>
@@ -2508,9 +1860,7 @@ footer p {
                             <div class="review">
 
                                 <div class="stars">
-
                                     ★★★★★
-
                                 </div>
 
                                 <strong>
@@ -2518,10 +1868,8 @@ footer p {
                                 </strong>
 
                                 <p>
-
                                     La prenda estaba
-                                    muy cuidada. Repetiría.
-
+                                    muy cuidada.
                                 </p>
 
                             </div>
@@ -2534,35 +1882,84 @@ footer p {
                 </div>
 
 
-                <!-- COMPRA -->
+                <!-- 3 TALLA -->
 
-                <div class="accordion-item">
+                <div class="accordion">
 
                     <button
-                        class="accordion-button"
+                        class="accordion-header"
                         onclick="toggleAccordion(this)">
 
-                        <span>
+                        <div class="accordion-title">
 
-                            Compra y envío
+                            <div class="accordion-icon">
+                                📏
+                            </div>
 
-                        </span>
+                            <span>
+                                Talla y medidas
+                            </span>
 
-                        <span>+</span>
+                        </div>
+
+                        <div class="plus">
+                            +
+                        </div>
 
                     </button>
 
 
-                    <div class="accordion-content">
+                    <div class="accordion-body">
 
-                        <div
-                            class="accordion-content-inner">
+                        <div class="accordion-inner">
+
+                            La talla aparece indicada
+                            en la información de la prenda.
+                            Si necesitas medidas concretas,
+                            puedes contactar con nosotros.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 4 ENVÍO -->
+
+                <div class="accordion">
+
+                    <button
+                        class="accordion-header"
+                        onclick="toggleAccordion(this)">
+
+                        <div class="accordion-title">
+
+                            <div class="accordion-icon">
+                                📦
+                            </div>
+
+                            <span>
+                                Compra y envío
+                            </span>
+
+                        </div>
+
+                        <div class="plus">
+                            +
+                        </div>
+
+                    </button>
+
+
+                    <div class="accordion-body">
+
+                        <div class="accordion-inner">
 
                             La compra se realiza
                             directamente desde Vinted.
-                            Pulsa el botón inferior para
-                            acceder al anuncio y consultar
-                            las opciones disponibles.
+                            Pulsa "VER EN VINTED"
+                            para acceder al anuncio.
 
                         </div>
 
@@ -2571,34 +1968,41 @@ footer p {
                 </div>
 
 
-                <!-- CUIDADO -->
+                <!-- 5 ESTADO -->
 
-                <div class="accordion-item">
+                <div class="accordion">
 
                     <button
-                        class="accordion-button"
+                        class="accordion-header"
                         onclick="toggleAccordion(this)">
 
-                        <span>
+                        <div class="accordion-title">
 
-                            Estado de la prenda
+                            <div class="accordion-icon">
+                                ✓
+                            </div>
 
-                        </span>
+                            <span>
+                                Estado de la prenda
+                            </span>
 
-                        <span>+</span>
+                        </div>
+
+                        <div class="plus">
+                            +
+                        </div>
 
                     </button>
 
 
-                    <div class="accordion-content">
+                    <div class="accordion-body">
 
-                        <div
-                            class="accordion-content-inner">
+                        <div class="accordion-inner">
 
                             Revisamos las prendas antes
-                            de publicarlas y mostramos
-                            su estado en la descripción
-                            correspondiente.
+                            de publicarlas e indicamos
+                            cualquier detalle importante
+                            en el anuncio.
 
                         </div>
 
@@ -2610,18 +2014,17 @@ footer p {
             </div>
 
 
-            <!-- VINTED -->
+            <!-- BOTÓN VINTED -->
 
             <a
-                id="modalVinted"
+                id="vintedButton"
                 href="#"
                 target="_blank"
-                class="vinted-button">
+                class="vinted">
 
                 🛍️ VER EN VINTED →
 
             </a>
-
 
         </div>
 
@@ -2630,16 +2033,28 @@ footer p {
 </div>
 
 
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
 <script>
 
+/* =========================
+   FAVORITOS
+========================= */
 
-/* =========================================================
+function favorite(button) {
+
+    if (button.innerHTML.trim() === "♡") {
+        button.innerHTML = "♥";
+        button.style.color = "#ff4f81";
+    } else {
+        button.innerHTML = "♡";
+        button.style.color = "";
+    }
+
+}
+
+
+/* =========================
    ABRIR PRODUCTO
-========================================================= */
+========================= */
 
 function openProduct(
     name,
@@ -2651,127 +2066,83 @@ function openProduct(
     vinted
 ) {
 
+    document.getElementById("modalName").textContent = name;
 
-    document.getElementById(
-        "modalName"
-    ).textContent = name;
+    document.getElementById("modalPrice").textContent = price;
 
+    document.getElementById("modalSize").textContent = size;
 
-    document.getElementById(
-        "modalPrice"
-    ).textContent = price;
+    document.getElementById("modalCondition").textContent = condition;
 
+    document.getElementById("modalDescription").textContent = description;
 
-    document.getElementById(
-        "modalSize"
-    ).textContent = size;
+    document.getElementById("modalImage").src = image;
 
+    document.getElementById("vintedButton").href = vinted;
 
-    document.getElementById(
-        "modalCondition"
-    ).textContent = condition;
+    document.getElementById("modal").style.display = "block";
+
+    document.body.style.overflow = "hidden";
 
 
-    document.getElementById(
-        "modalDescription"
-    ).textContent = description;
-
-
-    document.getElementById(
-        "modalPhoto"
-    ).src = image;
-
-
-    document.getElementById(
-        "modalVinted"
-    ).href = vinted;
-
-
-    document.getElementById(
-        "productModal"
-    ).style.display = "block";
-
-
-    document.body.style.overflow =
-        "hidden";
-
-
-    /* cerrar desplegables anteriores */
+    /* cerrar todos los desplegables */
 
     document
-        .querySelectorAll(".accordion-item")
+        .querySelectorAll(".accordion")
         .forEach(function(item) {
 
-            item.classList.remove("active");
+            item.classList.remove("open");
 
-            const content =
-                item.querySelector(
-                    ".accordion-content"
-                );
-
-            content.style.maxHeight = null;
+            item
+                .querySelector(".accordion-body")
+                .style.maxHeight = null;
 
         });
 
 }
 
 
-/* =========================================================
+/* =========================
    CERRAR PRODUCTO
-========================================================= */
+========================= */
 
 function closeProduct() {
 
-    document.getElementById(
-        "productModal"
-    ).style.display = "none";
+    document.getElementById("modal").style.display = "none";
 
-
-    document.body.style.overflow =
-        "auto";
+    document.body.style.overflow = "auto";
 
 }
 
 
-/* =========================================================
-   DESPLEGABLES
-========================================================= */
+/* =========================
+   DESPLEGABLE
+========================= */
 
 function toggleAccordion(button) {
 
-
-    const item =
+    const accordion =
         button.parentElement;
 
-
-    const content =
-        item.querySelector(
-            ".accordion-content"
+    const body =
+        accordion.querySelector(
+            ".accordion-body"
         );
 
-
-    const isOpen =
-        item.classList.contains(
-            "active"
-        );
+    const alreadyOpen =
+        accordion.classList.contains("open");
 
 
-    /* cerrar todos */
+    /* cerrar todos los demás */
 
     document
-        .querySelectorAll(
-            ".accordion-item"
-        )
-        .forEach(function(other) {
+        .querySelectorAll(".accordion")
+        .forEach(function(item) {
 
-            other.classList.remove(
-                "active"
-            );
+            item.classList.remove("open");
 
-            other
-                .querySelector(
-                    ".accordion-content"
-                )
+            item
+                .querySelector(".accordion-body")
                 .style.maxHeight = null;
 
         });
@@ -2779,58 +2150,47 @@ function toggleAccordion(button) {
 
     /* abrir el seleccionado */
 
-    if (!isOpen) {
+    if (!alreadyOpen) {
 
-        item.classList.add(
-            "active"
-        );
+        accordion.classList.add("open");
 
-        content.style.maxHeight =
-            content.scrollHeight +
-            "px";
+        body.style.maxHeight =
+            body.scrollHeight + "px";
 
     }
 
 }
 
 
-/* =========================================================
-   CERRAR AL PULSAR FUERA
-========================================================= */
+/* =========================
+   CERRAR AL HACER CLICK FUERA
+========================= */
 
-window.onclick =
-function(event) {
+window.addEventListener(
+    "click",
+    function(event) {
 
-    const modal =
-        document.getElementById(
-            "productModal"
-        );
+        const modal =
+            document.getElementById("modal");
 
-    if (
-        event.target === modal
-    ) {
-
-        closeProduct();
+        if (event.target === modal) {
+            closeProduct();
+        }
 
     }
+);
 
-};
 
-
-/* =========================================================
-   ESC PARA CERRAR
-========================================================= */
+/* =========================
+   ESC
+========================= */
 
 document.addEventListener(
     "keydown",
     function(event) {
 
-        if (
-            event.key === "Escape"
-        ) {
-
+        if (event.key === "Escape") {
             closeProduct();
-
         }
 
     }
@@ -2838,8 +2198,6 @@ document.addEventListener(
 
 </script>
 
-
 </body>
-
 </html>
 ```
