@@ -1,47 +1,81 @@
 ```html
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>RETROVA | Ropa Vintage</title>
 
 <style>
 
+/* =========================
+   VARIABLES
+========================= */
+
 :root{
+
     --red:#d62828;
-    --red-dark:#a91d1d;
-    --cream:#f5eadc;
-    --white:#fffaf5;
-    --brown:#2b201b;
+
+    --red-dark:#991b1b;
+
+    --cream:#f4eadc;
+
+    --cream-light:#fffaf4;
+
+    --brown:#2d211b;
+
     --gray:#77716c;
+
     --border:#dfcfbc;
+
     --gold:#c59b4a;
+
 }
 
+/* =========================
+   GENERAL
+========================= */
+
 *{
+
     margin:0;
+
     padding:0;
+
     box-sizing:border-box;
+
 }
 
 html{
+
     scroll-behavior:smooth;
+
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:var(--cream);
-    color:var(--brown);
-}
 
-a{
-    text-decoration:none;
+    font-family:Arial,Helvetica,sans-serif;
+
+    background:var(--cream);
+
+    color:var(--brown);
+
 }
 
 button{
+
     font-family:inherit;
+
+}
+
+a{
+
+    text-decoration:none;
+
 }
 
 /* =========================
@@ -49,34 +83,57 @@ button{
 ========================= */
 
 .brand{
+
     font-weight:900;
+
     letter-spacing:3px;
+
 }
 
-.retro{
+.brand .retro{
+
     color:var(--red);
+
 }
 
-.va{
+.brand .va{
+
     color:white;
+
+}
+
+.brand-dark .retro{
+
+    color:var(--red);
+
 }
 
 .brand-dark .va{
+
     color:var(--brown);
+
 }
 
 /* =========================
-   TOPBAR
+   BARRA SUPERIOR
 ========================= */
 
 .topbar{
+
     background:var(--brown);
+
     color:white;
+
     text-align:center;
+
     padding:10px;
+
     font-size:10px;
+
     font-weight:bold;
+
     letter-spacing:3px;
+
 }
 
 /* =========================
@@ -84,44 +141,77 @@ button{
 ========================= */
 
 header{
+
     position:sticky;
+
     top:0;
+
     z-index:1000;
-    background:rgba(255,250,245,.97);
+
+    background:rgba(255,250,244,.97);
+
     border-bottom:1px solid var(--border);
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     padding:18px 7%;
+
     backdrop-filter:blur(10px);
+
 }
 
 .header-logo{
+
     font-size:25px;
+
 }
 
 nav{
+
     display:flex;
+
     gap:5px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
 }
 
 nav a{
+
     color:var(--brown);
+
     padding:11px 15px;
+
     border-radius:50px;
+
     font-size:10px;
+
     font-weight:bold;
+
     transition:.25s;
+
 }
 
 nav a:hover{
+
     background:var(--red);
+
     color:white;
+
 }
 
 nav .special{
+
     background:var(--red);
+
     color:white;
+
 }
 
 /* =========================
@@ -129,78 +219,157 @@ nav .special{
 ========================= */
 
 .hero{
-    min-height:620px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
+
+    min-height:650px;
+
     position:relative;
 
+    overflow:hidden;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
     background-image:
+
     linear-gradient(
-        rgba(35,25,20,.68),
-        rgba(35,25,20,.68)
+
+        rgba(35,25,20,.67),
+
+        rgba(35,25,20,.67)
+
     ),
+
     url("https://images.unsplash.com/photo-1555529771-835f59fc5efe?auto=format&fit=crop&w=2200&q=90");
 
     background-size:cover;
+
     background-position:center;
+
 }
 
 .hero-content{
+
+    position:relative;
+
+    z-index:2;
+
     width:95%;
-    max-width:1100px;
+
+    max-width:1200px;
+
+    margin:auto;
+
 }
 
 .vintage-label{
+
     display:inline-block;
+
     color:white;
+
     border:1px solid rgba(255,255,255,.8);
+
     padding:10px 20px;
+
     border-radius:50px;
+
     font-size:10px;
+
     font-weight:bold;
+
     letter-spacing:4px;
+
     margin-bottom:28px;
+
 }
 
 .hero-title{
+
     font-size:clamp(65px,11vw,145px);
+
     line-height:.85;
+
     font-weight:900;
+
     letter-spacing:5px;
+
     margin-bottom:30px;
+
     text-shadow:
+
     7px 7px 0 rgba(0,0,0,.2),
+
     0 15px 40px rgba(0,0,0,.45);
+
+}
+
+.hero-title .retro{
+
+    color:var(--red);
+
+}
+
+.hero-title .va{
+
+    color:white;
+
 }
 
 .hero p{
+
     max-width:600px;
+
     margin:0 auto 30px;
+
     color:#f8eee4;
+
     line-height:1.7;
+
     font-size:16px;
+
 }
 
 .main-button{
+
     display:inline-flex;
+
     align-items:center;
+
     justify-content:center;
+
     padding:16px 30px;
+
     border-radius:50px;
+
     background:var(--red);
+
     color:white;
+
     font-size:10px;
+
     font-weight:bold;
+
     letter-spacing:1px;
+
     transition:.25s;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.25);
+
 }
 
 .main-button:hover{
+
     background:white;
+
     color:var(--red);
+
     transform:translateY(-3px);
+
 }
 
 /* =========================
@@ -208,67 +377,107 @@ nav .special{
 ========================= */
 
 .trust{
+
     display:grid;
+
     grid-template-columns:repeat(4,1fr);
+
     background:white;
+
 }
 
 .trust-box{
+
     text-align:center;
+
     padding:30px 15px;
+
     border-right:1px solid var(--border);
+
 }
 
 .trust-box:last-child{
+
     border-right:none;
+
 }
 
 .trust-icon{
+
     width:48px;
+
     height:48px;
+
     margin:0 auto 10px;
+
     border-radius:50%;
+
     background:#f8dddd;
+
     color:var(--red);
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     font-size:18px;
+
 }
 
 .trust-box h3{
+
     font-size:12px;
+
     margin-bottom:6px;
+
 }
 
 .trust-box p{
+
     color:var(--gray);
+
     font-size:10px;
+
 }
 
 /* =========================
-   TITULOS
+   TITULO PRODUCTOS
 ========================= */
 
 .section-heading{
+
     text-align:center;
-    padding:80px 20px 30px;
+
+    padding:85px 20px 35px;
+
 }
 
 .section-heading small{
+
     color:var(--red);
+
     font-size:10px;
+
     font-weight:bold;
+
     letter-spacing:3px;
+
 }
 
 .section-heading h2{
+
     font-size:46px;
+
     margin:12px 0;
+
 }
 
 .section-heading p{
+
     color:var(--gray);
+
 }
 
 /* =========================
@@ -276,40 +485,69 @@ nav .special{
 ========================= */
 
 .search-area{
-    padding:10px 7% 25px;
+
+    padding:0 7% 35px;
+
     display:flex;
+
     justify-content:center;
+
 }
 
 .search-box{
+
     width:100%;
+
     max-width:650px;
+
     position:relative;
+
 }
 
 .search-box input{
+
     width:100%;
-    padding:17px 55px 17px 20px;
-    border:3px solid var(--red);
+
+    padding:17px 52px 17px 20px;
+
+    border:2px solid var(--red);
+
     border-radius:50px;
+
     background:white;
-    outline:none;
-    font-size:13px;
+
     color:var(--brown);
-    box-shadow:0 8px 25px rgba(214,40,40,.12);
+
+    font-size:13px;
+
+    outline:none;
+
+    box-shadow:0 8px 25px rgba(214,40,40,.08);
+
+    transition:.25s;
+
 }
 
 .search-box input:focus{
-    box-shadow:0 8px 30px rgba(214,40,40,.22);
+
+    box-shadow:0 0 0 4px rgba(214,40,40,.12);
+
 }
 
 .search-icon{
+
     position:absolute;
-    right:20px;
+
+    right:19px;
+
     top:50%;
+
     transform:translateY(-50%);
+
     color:var(--red);
+
     font-size:20px;
+
 }
 
 /* =========================
@@ -317,30 +555,53 @@ nav .special{
 ========================= */
 
 .categories{
-    padding:10px 7% 45px;
+
+    padding:0 7% 45px;
+
     display:flex;
+
     justify-content:center;
-    flex-wrap:wrap;
+
     gap:10px;
+
+    flex-wrap:wrap;
+
 }
 
 .category-button{
-    border:2px solid var(--red);
-    background:white;
+
+    border:1px solid var(--red);
+
+    background:transparent;
+
     color:var(--red);
+
     padding:12px 20px;
+
     border-radius:50px;
-    font-size:10px;
-    font-weight:bold;
+
     cursor:pointer;
+
+    font-size:10px;
+
+    font-weight:bold;
+
+    letter-spacing:1px;
+
     transition:.25s;
+
 }
 
 .category-button:hover,
+
 .category-button.active{
+
     background:var(--red);
+
     color:white;
+
     transform:translateY(-2px);
+
 }
 
 /* =========================
@@ -348,168 +609,231 @@ nav .special{
 ========================= */
 
 .products-section{
+
     padding:0 7% 100px;
+
 }
 
 .products{
+
     display:grid;
+
     grid-template-columns:repeat(4,1fr);
+
     gap:24px;
+
 }
 
 .product{
+
     background:white;
+
     border:1px solid var(--border);
+
     border-radius:24px;
+
     overflow:hidden;
+
     transition:.3s;
-    display:none;
-}
 
-.product.visible{
-    display:block;
-    animation:appear .4s ease;
-}
-
-@keyframes appear{
-    from{
-        opacity:0;
-        transform:translateY(15px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
 }
 
 .product:hover{
+
     transform:translateY(-7px);
+
     box-shadow:0 20px 50px rgba(50,30,20,.15);
-}
 
-.product-image{
-    height:330px;
-    position:relative;
-    overflow:hidden;
-    background:#ddd0bf;
-}
-
-.product-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:.5s;
-}
-
-.product:hover .product-image img{
-    transform:scale(1.06);
-}
-
-.product-tag{
-    position:absolute;
-    top:14px;
-    left:14px;
-    z-index:2;
-    padding:8px 13px;
-    border-radius:50px;
-    background:var(--red);
-    color:white;
-    font-size:9px;
-    font-weight:bold;
-}
-
-.favorite{
-    position:absolute;
-    right:14px;
-    top:14px;
-    z-index:3;
-    width:41px;
-    height:41px;
-    border:none;
-    border-radius:50%;
-    background:white;
-    color:var(--red);
-    font-size:18px;
-    cursor:pointer;
-    transition:.2s;
-}
-
-.favorite:hover{
-    transform:scale(1.1);
-}
-
-.favorite.liked{
-    background:var(--red);
-    color:white;
-}
-
-.product-info{
-    padding:21px;
-}
-
-.category{
-    color:var(--red);
-    font-size:9px;
-    font-weight:bold;
-    letter-spacing:2px;
-    margin-bottom:7px;
-}
-
-.product h3{
-    font-size:18px;
-    margin-bottom:17px;
-}
-
-.product-bottom{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.price{
-    font-size:18px;
-    font-weight:900;
-}
-
-.more{
-    border:none;
-    background:var(--red);
-    color:white;
-    padding:11px 16px;
-    border-radius:50px;
-    cursor:pointer;
-    font-size:9px;
-    font-weight:bold;
-}
-
-.more:hover{
-    background:var(--red-dark);
 }
 
 /* =========================
-   MOSTRAR MÁS
+   PRODUCTOS OCULTOS
 ========================= */
 
-.show-more-area{
-    text-align:center;
-    margin-top:35px;
+.product.hidden-product{
+
+    display:none;
+
 }
 
-.show-more{
-    border:2px solid var(--red);
-    background:white;
-    color:var(--red);
-    padding:14px 28px;
-    border-radius:50px;
-    font-size:10px;
-    font-weight:bold;
+.product-image{
+
+    height:330px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:#ddd0bf;
+
     cursor:pointer;
-    transition:.25s;
+
 }
 
-.show-more:hover{
+.product-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+.product:hover .product-image img{
+
+    transform:scale(1.06);
+
+}
+
+.product-tag{
+
+    position:absolute;
+
+    top:14px;
+
+    left:14px;
+
+    z-index:2;
+
+    padding:8px 13px;
+
+    border-radius:50px;
+
     background:var(--red);
+
     color:white;
+
+    font-size:9px;
+
+    font-weight:bold;
+
+}
+
+.favorite{
+
+    position:absolute;
+
+    right:14px;
+
+    top:14px;
+
+    z-index:5;
+
+    width:41px;
+
+    height:41px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:var(--red);
+
+    font-size:18px;
+
+    cursor:pointer;
+
+}
+
+/* =========================
+   INFO PRODUCTO
+========================= */
+
+.product-info{
+
+    padding:21px;
+
+}
+
+.category{
+
+    color:var(--red);
+
+    font-size:9px;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+
+    margin-bottom:7px;
+
+}
+
+.product h3{
+
+    font-size:18px;
+
+    margin-bottom:17px;
+
+}
+
+.product-bottom{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+.price{
+
+    font-size:18px;
+
+    font-weight:900;
+
+}
+
+.buy-button{
+
+    border:none;
+
+    background:var(--red);
+
+    color:white;
+
+    padding:11px 17px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:9px;
+
+    font-weight:bold;
+
+    transition:.25s;
+
+}
+
+.buy-button:hover{
+
+    background:var(--red-dark);
+
+    transform:translateY(-2px);
+
+}
+
+/* =========================
+   MENSAJE PRODUCTOS
+========================= */
+
+.no-products{
+
+    display:none;
+
+    text-align:center;
+
+    padding:40px;
+
+    color:var(--gray);
+
 }
 
 /* =========================
@@ -517,44 +841,71 @@ nav .special{
 ========================= */
 
 .vintage-banner{
+
     margin:0 7% 100px;
+
     min-height:350px;
+
     border-radius:30px;
+
     overflow:hidden;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     text-align:center;
 
     background-image:
+
     linear-gradient(
+
         rgba(40,27,21,.68),
+
         rgba(40,27,21,.68)
+
     ),
+
     url("https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=2000&q=90");
 
     background-size:cover;
+
     background-position:center;
+
 }
 
 .vintage-banner-content{
+
     color:white;
+
     padding:30px;
+
 }
 
 .vintage-banner-logo{
+
     font-size:30px;
+
     margin-bottom:12px;
+
 }
 
 .vintage-banner h2{
+
     font-size:43px;
+
     margin-bottom:15px;
+
 }
 
 .vintage-banner p{
+
     color:#eee1d4;
+
     margin-bottom:25px;
+
 }
 
 /* =========================
@@ -562,38 +913,61 @@ nav .special{
 ========================= */
 
 .about{
+
     background:var(--brown);
+
     color:white;
+
     padding:90px 10%;
+
     text-align:center;
+
 }
 
 .about-content{
+
     max-width:750px;
+
     margin:auto;
+
 }
 
 .about small{
+
     color:#dfb64f;
+
     font-size:10px;
+
     letter-spacing:3px;
+
     font-weight:bold;
+
 }
 
 .about-logo{
+
     font-size:50px;
+
     margin:15px 0;
+
 }
 
 .about h2{
+
     font-size:40px;
+
     margin-bottom:20px;
+
 }
 
 .about p{
+
     color:#ded3c9;
+
     line-height:1.8;
+
     margin-bottom:12px;
+
 }
 
 /* =========================
@@ -601,35 +975,57 @@ nav .special{
 ========================= */
 
 .contact{
+
     padding:90px 20px;
+
     text-align:center;
+
 }
 
 .contact small{
+
     color:var(--red);
+
     font-size:10px;
+
     letter-spacing:3px;
+
     font-weight:bold;
+
 }
 
 .contact h2{
+
     font-size:43px;
+
     margin:13px 0;
+
 }
 
 .contact p{
+
     color:var(--gray);
+
     margin-bottom:25px;
+
 }
 
 .contact-button{
+
     display:inline-flex;
+
     padding:15px 27px;
+
     border-radius:50px;
+
     background:var(--red);
+
     color:white;
+
     font-size:10px;
+
     font-weight:bold;
+
 }
 
 /* =========================
@@ -637,20 +1033,43 @@ nav .special{
 ========================= */
 
 footer{
+
     background:#211713;
+
     color:white;
+
     text-align:center;
+
     padding:42px 20px;
+
 }
 
 .footer-logo{
+
     font-size:30px;
+
     margin-bottom:10px;
+
+}
+
+.footer-logo .retro{
+
+    color:var(--red);
+
+}
+
+.footer-logo .va{
+
+    color:white;
+
 }
 
 footer p{
+
     color:#cdbdb4;
+
     font-size:10px;
+
 }
 
 /* =========================
@@ -658,70 +1077,121 @@ footer p{
 ========================= */
 
 .modal{
+
     display:none;
+
     position:fixed;
+
     inset:0;
+
     z-index:5000;
+
     padding:20px;
+
     overflow-y:auto;
+
     background:rgba(30,20,15,.88);
+
     backdrop-filter:blur(8px);
+
 }
 
 .modal-box{
+
     max-width:950px;
+
     margin:30px auto;
-    background:var(--white);
+
+    background:var(--cream-light);
+
     border-radius:28px;
+
     overflow:hidden;
+
     display:grid;
+
     grid-template-columns:1fr 1fr;
+
 }
 
 .modal-image{
+
     width:100%;
+
     height:100%;
+
     min-height:620px;
+
     object-fit:cover;
+
 }
 
 .modal-content{
+
     position:relative;
+
     padding:43px 38px;
+
 }
 
 .close{
+
     position:absolute;
+
     top:15px;
+
     right:15px;
+
     width:43px;
+
     height:43px;
+
     border:none;
+
     border-radius:50%;
+
     background:white;
+
     cursor:pointer;
+
     font-size:24px;
-    z-index:5;
+
+    z-index:10;
+
 }
 
 .modal-category{
+
     color:var(--red);
+
     font-size:10px;
+
     font-weight:bold;
+
     letter-spacing:2px;
+
     margin-bottom:8px;
+
 }
 
 .modal-content h2{
+
     font-size:38px;
+
     margin-bottom:7px;
+
 }
 
 .modal-price{
+
     color:var(--red);
+
     font-size:27px;
+
     font-weight:900;
+
     margin-bottom:27px;
+
 }
 
 /* =========================
@@ -729,133 +1199,197 @@ footer p{
 ========================= */
 
 .accordions{
+
     display:flex;
+
     flex-direction:column;
+
     gap:11px;
+
 }
 
 .accordion{
+
     background:white;
+
     border:1px solid var(--border);
+
     border-radius:16px;
+
     overflow:hidden;
+
 }
 
 .accordion.open{
+
     border-color:var(--red);
+
 }
 
 .accordion-header{
+
     width:100%;
+
     padding:15px;
+
     border:none;
+
     background:white;
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     cursor:pointer;
+
     text-align:left;
+
 }
 
 .accordion-title{
+
     display:flex;
+
     align-items:center;
+
     gap:12px;
+
     font-size:12px;
+
     font-weight:bold;
+
 }
 
 .accordion-icon{
+
     width:34px;
+
     height:34px;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     border-radius:50%;
+
     background:#f8dddd;
+
     color:var(--red);
+
 }
 
 .plus{
+
     width:30px;
+
     height:30px;
+
     border-radius:50%;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     background:var(--red);
+
     color:white;
+
     font-size:18px;
+
     transition:.3s;
+
 }
 
 .accordion.open .plus{
+
     transform:rotate(45deg);
+
 }
 
 .accordion-body{
+
     max-height:0;
+
     overflow:hidden;
+
     transition:max-height .35s ease;
+
 }
 
 .accordion-inner{
+
     padding:0 17px 18px;
+
     color:var(--gray);
+
     font-size:12px;
+
     line-height:1.7;
+
 }
 
 .data-row{
+
     display:flex;
+
     justify-content:space-between;
+
     padding:9px 0;
+
     border-bottom:1px solid var(--border);
+
 }
 
 .data-row strong{
+
     color:var(--brown);
+
 }
 
 /* =========================
-   BOTÓN COMPRAR
+   BOTON COMPRAR MODAL
 ========================= */
 
-.vinted-button{
+.modal-buy{
+
     width:100%;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     margin-top:22px;
+
     padding:17px;
+
     border-radius:50px;
+
     background:var(--red);
+
     color:white;
+
     font-size:10px;
+
     font-weight:bold;
+
     letter-spacing:1px;
+
+    transition:.25s;
+
 }
 
-.vinted-button:hover{
+.modal-buy:hover{
+
     background:var(--red-dark);
-}
 
-/* =========================
-   SIN RESULTADOS
-========================= */
-
-.no-results{
-    display:none;
-    text-align:center;
-    padding:50px 20px;
-    color:var(--gray);
-}
-
-.no-results strong{
-    display:block;
-    color:var(--brown);
-    font-size:20px;
-    margin-bottom:8px;
 }
 
 /* =========================
@@ -865,135 +1399,207 @@ footer p{
 @media(max-width:1050px){
 
     .products{
+
         grid-template-columns:repeat(2,1fr);
+
     }
 
     .trust{
+
         grid-template-columns:1fr 1fr;
+
     }
 
     .modal-box{
+
         grid-template-columns:1fr;
+
         max-width:650px;
+
     }
 
     .modal-image{
+
         min-height:400px;
+
         height:400px;
+
     }
+
 }
 
 /* =========================
-   MÓVIL
+   MOVIL
 ========================= */
 
 @media(max-width:650px){
 
     header{
-        flex-direction:column;
-        gap:13px;
-        padding:16px;
-    }
 
-    nav{
-        flex-wrap:wrap;
-        justify-content:center;
+        flex-direction:column;
+
+        gap:13px;
+
+        padding:16px;
+
     }
 
     nav a{
+
         font-size:8px;
+
         padding:8px 10px;
+
     }
 
     .hero{
+
         min-height:570px;
+
     }
 
     .hero-title{
+
         font-size:55px;
+
         letter-spacing:1px;
+
     }
 
     .hero p{
+
         font-size:14px;
+
     }
 
     .trust{
+
         grid-template-columns:1fr;
+
     }
 
     .trust-box{
+
         border-right:none;
+
         border-bottom:1px solid var(--border);
+
     }
 
     .section-heading h2{
+
         font-size:34px;
+
     }
 
     .products-section{
+
         padding:0 20px 70px;
+
     }
 
     .products{
+
         grid-template-columns:1fr;
+
     }
 
     .product-image{
+
         height:420px;
+
     }
 
     .categories{
-        padding-left:20px;
-        padding-right:20px;
+
+        padding:0 20px 35px;
+
     }
 
     .category-button{
+
         padding:10px 14px;
+
+        font-size:9px;
+
+    }
+
+    .search-area{
+
+        padding:0 20px 30px;
+
     }
 
     .vintage-banner{
+
         margin:0 20px 70px;
+
     }
 
     .vintage-banner h2{
+
         font-size:31px;
+
     }
 
     .modal{
+
         padding:10px;
+
     }
 
     .modal-box{
+
         margin:10px auto;
+
     }
 
     .modal-image{
+
         min-height:330px;
+
         height:330px;
+
     }
 
     .modal-content{
+
         padding:30px 20px;
+
     }
 
     .modal-content h2{
+
         font-size:30px;
+
     }
+
 }
 
 </style>
+
 </head>
 
+
 <body>
+
 
 <!-- =========================
      BARRA SUPERIOR
 ========================= -->
 
 <div class="topbar">
-    ✦ <span class="retro">RETRO</span><span class="va">VA</span>
-    · VINTAGE CLOTHING · SELECTED PIECES ✦
+
+    ✦
+
+    <span style="color:#d62828;">RETRO</span>
+
+    <span style="color:white;">VA</span>
+
+    · VINTAGE CLOTHING · SELECTED PIECES
+
+    ✦
+
 </div>
 
 
@@ -1004,14 +1610,30 @@ footer p{
 <header>
 
     <a href="#inicio" class="brand header-logo brand-dark">
+
         <span class="retro">RETRO</span><span class="va">VA</span>
+
     </a>
 
+
     <nav>
-        <a href="#inicio">INICIO</a>
-        <a href="#productos">PRENDAS</a>
-        <a href="#nosotros">NOSOTROS</a>
-        <a href="#contacto" class="special">CONTACTO</a>
+
+        <a href="#inicio">
+            INICIO
+        </a>
+
+        <a href="#productos">
+            PRENDAS
+        </a>
+
+        <a href="#nosotros">
+            NOSOTROS
+        </a>
+
+        <a href="#contacto" class="special">
+            CONTACTO
+        </a>
+
     </nav>
 
 </header>
@@ -1026,21 +1648,34 @@ footer p{
     <div class="hero-content">
 
         <div class="vintage-label">
+
             VINTAGE CLOTHING
+
         </div>
 
+
         <h1 class="hero-title">
+
             <span class="retro">RETRO</span><span class="va">VA</span>
+
         </h1>
 
+
         <p>
+
             Ropa vintage seleccionada,
+
             prendas con carácter y piezas
+
             que merecen una segunda vida.
+
         </p>
 
+
         <a href="#productos" class="main-button">
+
             DESCUBRIR COLECCIÓN →
+
         </a>
 
     </div>
@@ -1055,41 +1690,88 @@ footer p{
 <section class="trust">
 
     <div class="trust-box">
-        <div class="trust-icon">✓</div>
-        <h3>Prendas seleccionadas</h3>
-        <p>Selección cuidada</p>
+
+        <div class="trust-icon">
+            ✓
+        </div>
+
+        <h3>
+            Prendas seleccionadas
+        </h3>
+
+        <p>
+            Selección cuidada
+        </p>
+
     </div>
 
-    <div class="trust-box">
-        <div class="trust-icon">◇</div>
-        <h3>Información clara</h3>
-        <p>Tallas y estado</p>
-    </div>
 
     <div class="trust-box">
-        <div class="trust-icon">🔒</div>
-        <h3>Compra segura</h3>
-        <p>A través de Vinted</p>
+
+        <div class="trust-icon">
+            ♢
+        </div>
+
+        <h3>
+            Información clara
+        </h3>
+
+        <p>
+            Tallas y estado
+        </p>
+
     </div>
 
+
     <div class="trust-box">
-        <div class="trust-icon">★</div>
-        <h3>Estilo vintage</h3>
-        <p>Piezas con personalidad</p>
+
+        <div class="trust-icon">
+            🔒
+        </div>
+
+        <h3>
+            Compra segura
+        </h3>
+
+        <p>
+            Compra a través de Vinted
+        </p>
+
+    </div>
+
+
+    <div class="trust-box">
+
+        <div class="trust-icon">
+            ★
+        </div>
+
+        <h3>
+            Estilo vintage
+        </h3>
+
+        <p>
+            Piezas con personalidad
+        </p>
+
     </div>
 
 </section>
 
 
 <!-- =========================
-     PRODUCTOS
+     TITULO
 ========================= -->
 
 <section class="section-heading" id="productos">
 
-    <small>NUESTRA SELECCIÓN</small>
+    <small>
+        NUESTRA SELECCIÓN
+    </small>
 
-    <h2>Encuentra tu estilo</h2>
+    <h2>
+        Encuentra tu estilo
+    </h2>
 
     <p>
         Explora nuestras prendas vintage seleccionadas.
@@ -1107,13 +1789,14 @@ footer p{
     <div class="search-box">
 
         <input
-            type="text"
-            id="searchInput"
-            placeholder="Buscar camisetas, chaquetas, pantalones..."
-            oninput="searchProducts()"
-        >
+        type="text"
+        id="searchInput"
+        placeholder="Buscar camisetas, chaquetas, pantalones..."
+        onkeyup="searchProducts()">
 
-        <span class="search-icon">⌕</span>
+        <span class="search-icon">
+            ⌕
+        </span>
 
     </div>
 
@@ -1127,272 +1810,376 @@ footer p{
 <div class="categories">
 
     <button
-        class="category-button active"
-        onclick="filterCategory('todos',this)">
-        TODAS
+    class="category-button active"
+    onclick="filterCategory('todos',this)">
+
+        TODO
+
     </button>
 
+
     <button
-        class="category-button"
-        onclick="filterCategory('camiseta',this)">
+    class="category-button"
+    onclick="filterCategory('camiseta',this)">
+
         CAMISETAS
+
     </button>
 
-    <button
-        class="category-button"
-        onclick="filterCategory('sudadera',this)">
-        SUDADERAS
-    </button>
 
     <button
-        class="category-button"
-        onclick="filterCategory('pantalon',this)">
+    class="category-button"
+    onclick="filterCategory('pantalon',this)">
+
         PANTALONES
+
     </button>
 
-    <button
-        class="category-button"
-        onclick="filterCategory('chaqueta',this)">
-        CHAQUETAS
-    </button>
 
     <button
-        class="category-button"
-        onclick="filterCategory('abrigo',this)">
+    class="category-button"
+    onclick="filterCategory('abrigo',this)">
+
         ABRIGOS
+
+    </button>
+
+
+    <button
+    class="category-button"
+    onclick="filterCategory('chaqueta',this)">
+
+        CHAQUETAS
+
+    </button>
+
+
+    <button
+    class="category-button"
+    onclick="filterCategory('sudadera',this)">
+
+        SUDADERAS
+
     </button>
 
 </div>
 
 
+<!-- =========================
+     PRODUCTOS
+========================= -->
+
 <section class="products-section">
 
-<div class="products" id="products">
+    <div class="products" id="productsContainer">
 
 
-<!-- PRODUCTO 1 -->
+        <!-- PRODUCTO 1 -->
 
-<article class="product visible"
-data-category="camiseta"
-data-name="camiseta vintage">
+        <article class="product" data-category="camiseta" data-name="camiseta vintage">
 
-    <div class="product-image">
-
-        <span class="product-tag">DESTACADO</span>
-
-        <button class="favorite" onclick="favorite(this)">
-            ♡
-        </button>
-
-        <img
-        src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=90"
-        alt="Camiseta vintage">
-
-    </div>
-
-    <div class="product-info">
-
-        <div class="category">CAMISETA</div>
-
-        <h3>Camiseta Vintage</h3>
-
-        <div class="product-bottom">
-
-            <span class="price">15,00 €</span>
-
-            <button class="more"
+            <div
+            class="product-image"
             onclick="openProduct(
             'Camiseta Vintage',
             '15,00 €',
             'M',
             'Muy buen estado',
-            'Camiseta de inspiración vintage. Prenda cuidada y lista para darle una segunda vida.',
+            'Camiseta de inspiración vintage, cuidada y lista para una nueva vida.',
             'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=90'
             )">
-                VER MÁS
-            </button>
 
-        </div>
-
-    </div>
-
-</article>
+                <span class="product-tag">
+                    DESTACADO
+                </span>
 
 
-<!-- PRODUCTO 2 -->
+                <button
+                class="favorite"
+                onclick="favorite(this);event.stopPropagation();">
 
-<article class="product visible"
-data-category="sudadera"
-data-name="sudadera vintage">
+                    ♡
 
-    <div class="product-image">
+                </button>
 
-        <span class="product-tag">POPULAR</span>
 
-        <button class="favorite" onclick="favorite(this)">
-            ♡
-        </button>
+                <img
+                src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=90"
+                alt="Camiseta vintage">
 
-        <img
-        src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=900&q=90"
-        alt="Sudadera vintage">
+            </div>
 
-    </div>
 
-    <div class="product-info">
+            <div class="product-info">
 
-        <div class="category">SUDADERA</div>
+                <div class="category">
+                    CAMISETA
+                </div>
 
-        <h3>Sudadera Vintage</h3>
+                <h3>
+                    Camiseta Vintage
+                </h3>
 
-        <div class="product-bottom">
 
-            <span class="price">25,00 €</span>
+                <div class="product-bottom">
 
-            <button class="more"
+                    <span class="price">
+                        15,00 €
+                    </span>
+
+
+                    <button
+                    class="buy-button"
+                    onclick="openProduct(
+                    'Camiseta Vintage',
+                    '15,00 €',
+                    'M',
+                    'Muy buen estado',
+                    'Camiseta de inspiración vintage, cuidada y lista para una nueva vida.',
+                    'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=90'
+                    )">
+
+                        COMPRAR
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCTO 2 -->
+
+        <article class="product" data-category="sudadera" data-name="sudadera vintage">
+
+            <div
+            class="product-image"
             onclick="openProduct(
             'Sudadera Vintage',
             '25,00 €',
             'M',
             'Muy buen estado',
-            'Sudadera de inspiración vintage. Una pieza cómoda y fácil de combinar.',
+            'Sudadera de inspiración vintage con un estilo clásico y versátil.',
             'https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=900&q=90'
             )">
-                VER MÁS
-            </button>
 
-        </div>
-
-    </div>
-
-</article>
+                <span class="product-tag">
+                    POPULAR
+                </span>
 
 
-<!-- PRODUCTO 3 -->
+                <button
+                class="favorite"
+                onclick="favorite(this);event.stopPropagation();">
 
-<article class="product visible"
-data-category="pantalon"
-data-name="pantalon vintage">
+                    ♡
 
-    <div class="product-image">
+                </button>
 
-        <button class="favorite" onclick="favorite(this)">
-            ♡
-        </button>
 
-        <img
-        src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=900&q=90"
-        alt="Pantalón vintage">
+                <img
+                src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=900&q=90"
+                alt="Sudadera vintage">
 
-    </div>
+            </div>
 
-    <div class="product-info">
 
-        <div class="category">PANTALÓN</div>
+            <div class="product-info">
 
-        <h3>Pantalón Vintage</h3>
+                <div class="category">
+                    SUDADERA
+                </div>
 
-        <div class="product-bottom">
+                <h3>
+                    Sudadera Vintage
+                </h3>
 
-            <span class="price">20,00 €</span>
 
-            <button class="more"
+                <div class="product-bottom">
+
+                    <span class="price">
+                        25,00 €
+                    </span>
+
+
+                    <button
+                    class="buy-button"
+                    onclick="openProduct(
+                    'Sudadera Vintage',
+                    '25,00 €',
+                    'M',
+                    'Muy buen estado',
+                    'Sudadera de inspiración vintage con un estilo clásico y versátil.',
+                    'https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=900&q=90'
+                    )">
+
+                        COMPRAR
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCTO 3 -->
+
+        <article class="product" data-category="pantalon" data-name="pantalon vintage">
+
+            <div
+            class="product-image"
             onclick="openProduct(
             'Pantalón Vintage',
             '20,00 €',
             '38',
             'Buen estado',
-            'Pantalón de inspiración vintage. Revisa las medidas del anuncio antes de comprar.',
+            'Pantalón de inspiración vintage con corte clásico.',
             'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=900&q=90'
             )">
-                VER MÁS
-            </button>
-
-        </div>
-
-    </div>
-
-</article>
 
 
-<!-- PRODUCTO 4 -->
+                <button
+                class="favorite"
+                onclick="favorite(this);event.stopPropagation();">
 
-<article class="product visible"
-data-category="chaqueta"
-data-name="chaqueta vintage">
+                    ♡
 
-    <div class="product-image">
+                </button>
 
-        <span class="product-tag">DESTACADO</span>
 
-        <button class="favorite" onclick="favorite(this)">
-            ♡
-        </button>
+                <img
+                src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=900&q=90"
+                alt="Pantalón vintage">
 
-        <img
-        src="https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=900&q=90"
-        alt="Chaqueta vintage">
+            </div>
 
-    </div>
 
-    <div class="product-info">
+            <div class="product-info">
 
-        <div class="category">CHAQUETA</div>
+                <div class="category">
+                    PANTALÓN
+                </div>
 
-        <h3>Chaqueta Vintage</h3>
+                <h3>
+                    Pantalón Vintage
+                </h3>
 
-        <div class="product-bottom">
 
-            <span class="price">35,00 €</span>
+                <div class="product-bottom">
 
-            <button class="more"
+                    <span class="price">
+                        20,00 €
+                    </span>
+
+
+                    <button
+                    class="buy-button"
+                    onclick="openProduct(
+                    'Pantalón Vintage',
+                    '20,00 €',
+                    '38',
+                    'Buen estado',
+                    'Pantalón de inspiración vintage con corte clásico.',
+                    'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=900&q=90'
+                    )">
+
+                        COMPRAR
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCTO 4 -->
+
+        <article class="product" data-category="chaqueta" data-name="chaqueta vintage">
+
+            <div
+            class="product-image"
             onclick="openProduct(
             'Chaqueta Vintage',
             '35,00 €',
             'L',
             'Buen estado',
-            'Chaqueta de inspiración vintage. Consulta las fotografías para comprobar todos los detalles.',
+            'Chaqueta vintage con personalidad y estilo clásico.',
             'https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=900&q=90'
             )">
-                VER MÁS
-            </button>
 
-        </div>
-
-    </div>
-
-</article>
+                <span class="product-tag">
+                    DESTACADO
+                </span>
 
 
-<!-- PRODUCTO 5 -->
+                <button
+                class="favorite"
+                onclick="favorite(this);event.stopPropagation();">
 
-<article class="product"
-data-category="camiseta"
-data-name="camiseta negra">
+                    ♡
 
-    <div class="product-image">
+                </button>
 
-        <button class="favorite" onclick="favorite(this)">
-            ♡
-        </button>
 
-        <img
-        src="https://images.unsplash.com/photo-1583743814966-8936f37f4678?auto=format&fit=crop&w=900&q=90"
-        alt="Camiseta negra">
+                <img
+                src="https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=900&q=90"
+                alt="Chaqueta vintage">
 
-    </div>
+            </div>
 
-    <div class="product-info">
 
-        <div class="category">CAMISETA</div>
+            <div class="product-info">
 
-        <h3>Camiseta Negra</h3>
+                <div class="category">
+                    CHAQUETA
+                </div>
 
-        <div class="product-bottom">
+                <h3>
+                    Chaqueta Vintage
+                </h3>
 
-            <span class="price">15,00 €</span>
 
-            <button class="more"
+                <div class="product-bottom">
+
+                    <span class="price">
+                        35,00 €
+                    </span>
+
+
+                    <button
+                    class="buy-button"
+                    onclick="openProduct(
+                    'Chaqueta Vintage',
+                    '35,00 €',
+                    'L',
+                    'Buen estado',
+                    'Chaqueta vintage con personalidad y estilo clásico.',
+                    'https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=900&q=90'
+                    )">
+
+                        COMPRAR
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCTO 5 -->
+
+        <article class="product hidden-product" data-category="camiseta" data-name="camiseta negra">
+
+            <div
+            class="product-image"
             onclick="openProduct(
             'Camiseta Negra',
             '15,00 €',
@@ -1401,47 +2188,69 @@ data-name="camiseta negra">
             'Camiseta negra de inspiración vintage.',
             'https://images.unsplash.com/photo-1583743814966-8936f37f4678?auto=format&fit=crop&w=900&q=90'
             )">
-                VER MÁS
-            </button>
 
-        </div>
+                <button
+                class="favorite"
+                onclick="favorite(this);event.stopPropagation();">
 
-    </div>
+                    ♡
 
-</article>
+                </button>
 
 
-<!-- PRODUCTO 6 -->
+                <img
+                src="https://images.unsplash.com/photo-1583743814966-8936f37f4678?auto=format&fit=crop&w=900&q=90"
+                alt="Camiseta negra vintage">
 
-<article class="product"
-data-category="camiseta"
-data-name="camisa vintage">
+            </div>
 
-    <div class="product-image">
 
-        <span class="product-tag">NUEVO</span>
+            <div class="product-info">
 
-        <button class="favorite" onclick="favorite(this)">
-            ♡
-        </button>
+                <div class="category">
+                    CAMISETA
+                </div>
 
-        <img
-        src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=900&q=90"
-        alt="Camisa vintage">
+                <h3>
+                    Camiseta Negra
+                </h3>
 
-    </div>
 
-    <div class="product-info">
+                <div class="product-bottom">
 
-        <div class="category">CAMISA</div>
+                    <span class="price">
+                        15,00 €
+                    </span>
 
-        <h3>Camisa Vintage</h3>
 
-        <div class="product-bottom">
+                    <button
+                    class="buy-button"
+                    onclick="openProduct(
+                    'Camiseta Negra',
+                    '15,00 €',
+                    'M',
+                    'Muy buen estado',
+                    'Camiseta negra de inspiración vintage.',
+                    'https://images.unsplash.com/photo-1583743814966-8936f37f4678?auto=format&fit=crop&w=900&q=90'
+                    )">
 
-            <span class="price">22,00 €</span>
+                        COMPRAR
 
-            <button class="more"
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCTO 6 -->
+
+        <article class="product hidden-product" data-category="camiseta" data-name="camisa vintage">
+
+            <div
+            class="product-image"
             onclick="openProduct(
             'Camisa Vintage',
             '22,00 €',
@@ -1450,136 +2259,223 @@ data-name="camisa vintage">
             'Camisa clásica de inspiración vintage.',
             'https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=900&q=90'
             )">
-                VER MÁS
-            </button>
 
-        </div>
-
-    </div>
-
-</article>
+                <span class="product-tag">
+                    NUEVO
+                </span>
 
 
-<!-- PRODUCTO 7 -->
+                <button
+                class="favorite"
+                onclick="favorite(this);event.stopPropagation();">
 
-<article class="product"
-data-category="sudadera"
-data-name="jersey vintage">
+                    ♡
 
-    <div class="product-image">
+                </button>
 
-        <button class="favorite" onclick="favorite(this)">
-            ♡
-        </button>
 
-        <img
-        src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=900&q=90"
-        alt="Jersey vintage">
+                <img
+                src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=900&q=90"
+                alt="Camisa vintage">
 
-    </div>
+            </div>
 
-    <div class="product-info">
 
-        <div class="category">JERSEY</div>
+            <div class="product-info">
 
-        <h3>Jersey Vintage</h3>
+                <div class="category">
+                    CAMISETA
+                </div>
 
-        <div class="product-bottom">
+                <h3>
+                    Camisa Vintage
+                </h3>
 
-            <span class="price">24,00 €</span>
 
-            <button class="more"
+                <div class="product-bottom">
+
+                    <span class="price">
+                        22,00 €
+                    </span>
+
+
+                    <button
+                    class="buy-button"
+                    onclick="openProduct(
+                    'Camisa Vintage',
+                    '22,00 €',
+                    'M',
+                    'Buen estado',
+                    'Camisa clásica de inspiración vintage.',
+                    'https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=900&q=90'
+                    )">
+
+                        COMPRAR
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCTO 7 -->
+
+        <article class="product hidden-product" data-category="sudadera" data-name="jersey vintage">
+
+            <div
+            class="product-image"
             onclick="openProduct(
             'Jersey Vintage',
             '24,00 €',
             'M',
             'Muy buen estado',
-            'Jersey de inspiración vintage con un estilo fácil de combinar.',
+            'Jersey de inspiración vintage.',
             'https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=900&q=90'
             )">
-                VER MÁS
-            </button>
 
-        </div>
+                <button
+                class="favorite"
+                onclick="favorite(this);event.stopPropagation();">
 
-    </div>
+                    ♡
 
-</article>
+                </button>
 
 
-<!-- PRODUCTO 8 -->
+                <img
+                src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=900&q=90"
+                alt="Jersey vintage">
 
-<article class="product"
-data-category="abrigo"
-data-name="abrigo vintage">
+            </div>
 
-    <div class="product-image">
 
-        <span class="product-tag">DESTACADO</span>
+            <div class="product-info">
 
-        <button class="favorite" onclick="favorite(this)">
-            ♡
-        </button>
+                <div class="category">
+                    SUDADERA
+                </div>
 
-        <img
-        src="https://images.unsplash.com/photo-1496217590455-aa63a8350eea?auto=format&fit=crop&w=900&q=90"
-        alt="Abrigo vintage">
+                <h3>
+                    Jersey Vintage
+                </h3>
 
-    </div>
 
-    <div class="product-info">
+                <div class="product-bottom">
 
-        <div class="category">ABRIGO</div>
+                    <span class="price">
+                        24,00 €
+                    </span>
 
-        <h3>Abrigo Vintage</h3>
 
-        <div class="product-bottom">
+                    <button
+                    class="buy-button"
+                    onclick="openProduct(
+                    'Jersey Vintage',
+                    '24,00 €',
+                    'M',
+                    'Muy buen estado',
+                    'Jersey de inspiración vintage.',
+                    'https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=900&q=90'
+                    )">
 
-            <span class="price">40,00 €</span>
+                        COMPRAR
 
-            <button class="more"
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCTO 8 -->
+
+        <article class="product hidden-product" data-category="abrigo" data-name="abrigo vintage">
+
+            <div
+            class="product-image"
             onclick="openProduct(
             'Abrigo Vintage',
             '40,00 €',
             'L',
             'Buen estado',
-            'Abrigo de inspiración vintage. Consulta las fotografías y medidas disponibles.',
+            'Abrigo de inspiración vintage.',
             'https://images.unsplash.com/photo-1496217590455-aa63a8350eea?auto=format&fit=crop&w=900&q=90'
             )">
-                VER MÁS
-            </button>
 
-        </div>
+                <span class="product-tag">
+                    DESTACADO
+                </span>
+
+
+                <button
+                class="favorite"
+                onclick="favorite(this);event.stopPropagation();">
+
+                    ♡
+
+                </button>
+
+
+                <img
+                src="https://images.unsplash.com/photo-1496217590455-aa63a8350eea?auto=format&fit=crop&w=900&q=90"
+                alt="Abrigo vintage">
+
+            </div>
+
+
+            <div class="product-info">
+
+                <div class="category">
+                    ABRIGO
+                </div>
+
+                <h3>
+                    Abrigo Vintage
+                </h3>
+
+
+                <div class="product-bottom">
+
+                    <span class="price">
+                        40,00 €
+                    </span>
+
+
+                    <button
+                    class="buy-button"
+                    onclick="openProduct(
+                    'Abrigo Vintage',
+                    '40,00 €',
+                    'L',
+                    'Buen estado',
+                    'Abrigo de inspiración vintage.',
+                    'https://images.unsplash.com/photo-1496217590455-aa63a8350eea?auto=format&fit=crop&w=900&q=90'
+                    )">
+
+                        COMPRAR
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
 
     </div>
 
-</article>
 
+    <div class="no-products" id="noProducts">
 
-</div>
+        No hemos encontrado prendas con esa búsqueda.
 
-
-<div class="no-results" id="noResults">
-
-    <strong>No hemos encontrado esa prenda</strong>
-
-    Prueba con otro nombre o categoría.
-
-</div>
-
-
-<div class="show-more-area">
-
-    <button
-        class="show-more"
-        id="showMoreButton"
-        onclick="showAllProducts()">
-
-        VER MÁS PRENDAS ↓
-
-    </button>
-
-</div>
+    </div>
 
 </section>
 
@@ -1593,16 +2489,25 @@ data-name="abrigo vintage">
     <div class="vintage-banner-content">
 
         <div class="brand vintage-banner-logo">
+
             <span class="retro">RETRO</span><span class="va">VA</span>
+
         </div>
 
+
         <h2>
+
             VINTAGE · ÚNICO · ESPECIAL
+
         </h2>
 
+
         <p>
+
             Descubre todas nuestras prendas disponibles.
+
         </p>
+
 
         <a
         href="https://www.vinted.es/member/3155598275"
@@ -1610,7 +2515,7 @@ data-name="abrigo vintage">
         rel="noopener noreferrer"
         class="main-button">
 
-            COMPRAR EN VINTED →
+            COMPRAR →
 
         </a>
 
@@ -1627,26 +2532,44 @@ data-name="abrigo vintage">
 
     <div class="about-content">
 
-        <small>SOBRE NOSOTROS</small>
+        <small>
+            SOBRE NOSOTROS
+        </small>
+
 
         <div class="brand about-logo">
+
             <span class="retro">RETRO</span><span class="va">VA</span>
+
         </div>
 
+
         <h2>
+
             Ropa con historia.
+
         </h2>
 
-        <p>
-            En RETROVA seleccionamos prendas
-            con personalidad y estilo vintage.
-        </p>
 
         <p>
+
+            En RETROVA seleccionamos prendas
+
+            con personalidad y estilo vintage.
+
+        </p>
+
+
+        <p>
+
             Nuestro objetivo es dar una segunda
+
             vida a prendas especiales y hacer
+
             que encontrar ropa diferente sea
+
             sencillo.
+
         </p>
 
     </div>
@@ -1660,16 +2583,26 @@ data-name="abrigo vintage">
 
 <section class="contact" id="contacto">
 
-    <small>CONTACTO</small>
+    <small>
+        CONTACTO
+    </small>
+
 
     <h2>
+
         ¿Tienes alguna pregunta?
+
     </h2>
 
+
     <p>
+
         Escríbenos si necesitas información
+
         sobre alguna prenda.
+
     </p>
+
 
     <a
     href="mailto:TUEMAIL@EJEMPLO.COM"
@@ -1689,29 +2622,38 @@ data-name="abrigo vintage">
 <footer>
 
     <div class="brand footer-logo">
+
         <span class="retro">RETRO</span><span class="va">VA</span>
+
     </div>
 
+
     <p>
+
         © 2026 RETROVA · Ropa Vintage
+
     </p>
 
 </footer>
 
 
 <!-- =========================
-     MODAL PRODUCTO
+     MODAL
 ========================= -->
 
 <div class="modal" id="modal">
 
     <div class="modal-box">
 
+
         <button
         class="close"
         onclick="closeProduct()">
+
             ×
+
         </button>
+
 
         <img
         id="modalImage"
@@ -1719,22 +2661,32 @@ data-name="abrigo vintage">
         src=""
         alt="Prenda">
 
+
         <div class="modal-content">
+
 
             <div
             id="modalCategory"
             class="modal-category">
+
                 PRENDA
+
             </div>
 
+
             <h2 id="modalName">
+
                 Producto
+
             </h2>
+
 
             <div
             id="modalPrice"
             class="modal-price">
+
                 0,00 €
+
             </div>
 
 
@@ -1759,30 +2711,51 @@ data-name="abrigo vintage">
 
                         </div>
 
+
                         <div class="plus">
                             +
                         </div>
 
                     </button>
 
+
                     <div class="accordion-body">
 
                         <div class="accordion-inner">
 
-                            <div class="data-row">
-                                <span>Talla</span>
-                                <strong id="modalSize">-</strong>
-                            </div>
 
                             <div class="data-row">
-                                <span>Estado</span>
-                                <strong id="modalCondition">-</strong>
+
+                                <span>
+                                    Talla
+                                </span>
+
+                                <strong id="modalSize">
+                                    -
+                                </strong>
+
                             </div>
+
+
+                            <div class="data-row">
+
+                                <span>
+                                    Estado
+                                </span>
+
+                                <strong id="modalCondition">
+                                    -
+                                </strong>
+
+                            </div>
+
 
                             <p
                             id="modalDescription"
                             style="margin-top:12px;">
+
                                 -
+
                             </p>
 
                         </div>
@@ -1810,20 +2783,23 @@ data-name="abrigo vintage">
 
                         </div>
 
+
                         <div class="plus">
                             +
                         </div>
 
                     </button>
 
+
                     <div class="accordion-body">
 
                         <div class="accordion-inner">
 
-                            Las medidas exactas se pueden
-                            consultar en el anuncio de la
-                            prenda. Recomendamos revisar
-                            las medidas antes de comprar.
+                            Las medidas exactas estarán
+
+                            disponibles en el anuncio
+
+                            correspondiente.
 
                         </div>
 
@@ -1850,20 +2826,23 @@ data-name="abrigo vintage">
 
                         </div>
 
+
                         <div class="plus">
                             +
                         </div>
 
                     </button>
 
+
                     <div class="accordion-body">
 
                         <div class="accordion-inner">
 
-                            Todas las prendas se muestran
-                            con fotografías y una descripción
-                            para que puedas comprobar su
-                            estado antes de comprar.
+                            Consulta las fotografías
+
+                            y descripción del anuncio
+
+                            para conocer todos los detalles.
 
                         </div>
 
@@ -1890,26 +2869,30 @@ data-name="abrigo vintage">
 
                         </div>
 
+
                         <div class="plus">
                             +
                         </div>
 
                     </button>
 
+
                     <div class="accordion-body">
 
                         <div class="accordion-inner">
 
-                            Pulsa el botón "COMPRAR" para
-                            acceder a nuestra tienda de Vinted,
-                            donde podrás consultar la prenda
-                            y realizar la compra.
+                            Pulsa el botón COMPRAR
+
+                            para acceder al anuncio
+
+                            correspondiente.
 
                         </div>
 
                     </div>
 
                 </div>
+
 
             </div>
 
@@ -1918,9 +2901,9 @@ data-name="abrigo vintage">
             href="https://www.vinted.es/member/3155598275"
             target="_blank"
             rel="noopener noreferrer"
-            class="vinted-button">
+            class="modal-buy">
 
-                🛍 COMPRAR →
+                COMPRAR →
 
             </a>
 
@@ -1939,12 +2922,16 @@ data-name="abrigo vintage">
 
 function favorite(button){
 
-    button.classList.toggle("liked");
+    if(button.innerHTML.trim()==="♡"){
 
-    if(button.classList.contains("liked")){
         button.innerHTML="♥";
-    }else{
+
+    }
+
+    else{
+
         button.innerHTML="♡";
+
     }
 
 }
@@ -1975,9 +2962,11 @@ function openProduct(
 
     document.getElementById("modalImage").src=image;
 
+
     document.getElementById("modal").style.display="block";
 
     document.body.style.overflow="hidden";
+
 
     document.querySelectorAll(".accordion").forEach(function(item){
 
@@ -2037,15 +3026,17 @@ function toggleAccordion(button){
 
 
 /* =========================
-   FILTRAR CATEGORIAS
+   CATEGORIAS
 ========================= */
-
-let currentCategory="todos";
-
 
 function filterCategory(category,button){
 
-    currentCategory=category;
+    const products=document.querySelectorAll(".product");
+
+    const search=document.getElementById("searchInput");
+
+    search.value="";
+
 
     document.querySelectorAll(".category-button").forEach(function(btn){
 
@@ -2053,38 +3044,57 @@ function filterCategory(category,button){
 
     });
 
+
     button.classList.add("active");
 
-    document.getElementById("searchInput").value="";
 
-    const products=document.querySelectorAll(".product");
+    let visible=0;
 
-    let found=0;
 
     products.forEach(function(product,index){
 
-        const matches=
-            category==="todos" ||
-            product.dataset.category===category;
+        if(category==="todos"){
 
-        if(matches){
+            if(index<4){
 
-            product.classList.add("visible");
+                product.classList.remove("hidden-product");
 
-            found++;
+                visible++;
 
-        }else{
+            }
 
-            product.classList.remove("visible");
+            else{
+
+                product.classList.add("hidden-product");
+
+            }
+
+        }
+
+        else{
+
+            if(product.dataset.category===category){
+
+                product.classList.remove("hidden-product");
+
+                visible++;
+
+            }
+
+            else{
+
+                product.classList.add("hidden-product");
+
+            }
 
         }
 
     });
 
-    document.getElementById("noResults").style.display=
-        found===0 ? "block" : "none";
 
-    document.getElementById("showMoreButton").style.display="none";
+    document.getElementById("noProducts").style.display=
+
+        visible===0 ? "block" : "none";
 
 }
 
@@ -2095,27 +3105,11 @@ function filterCategory(category,button){
 
 function searchProducts(){
 
-    const search=
-        document.getElementById("searchInput")
-        .value
-        .toLowerCase()
-        .trim();
+    const search=document.getElementById("searchInput").value.toLowerCase().trim();
 
     const products=document.querySelectorAll(".product");
 
-    let found=0;
-
-
-    if(search===""){
-
-        filterCategory(
-            currentCategory,
-            document.querySelector(".category-button.active")
-        );
-
-        return;
-
-    }
+    let visible=0;
 
 
     document.querySelectorAll(".category-button").forEach(function(btn){
@@ -2127,51 +3121,62 @@ function searchProducts(){
 
     products.forEach(function(product){
 
-        const name=
-            product.dataset.name.toLowerCase();
+        const name=product.dataset.name;
 
-        const category=
-            product.dataset.category.toLowerCase();
+        const category=product.dataset.category;
+
 
         if(
+
+            search==="" ||
+
             name.includes(search) ||
+
             category.includes(search)
+
         ){
 
-            product.classList.add("visible");
+            product.classList.remove("hidden-product");
 
-            found++;
+            visible++;
 
-        }else{
+        }
 
-            product.classList.remove("visible");
+        else{
+
+            product.classList.add("hidden-product");
 
         }
 
     });
 
 
-    document.getElementById("noResults").style.display=
-        found===0 ? "block" : "none";
+    if(search===""){
 
-    document.getElementById("showMoreButton").style.display="none";
+        document.querySelector(".category-button").classList.add("active");
 
-}
+        products.forEach(function(product,index){
+
+            if(index<4){
+
+                product.classList.remove("hidden-product");
+
+            }
+
+            else{
+
+                product.classList.add("hidden-product");
+
+            }
+
+        });
+
+    }
 
 
-/* =========================
-   MOSTRAR TODAS
-========================= */
+    document.getElementById("noProducts").style.display=
 
-function showAllProducts(){
-
-    document.querySelectorAll(".product").forEach(function(product){
-
-        product.classList.add("visible");
-
-    });
-
-    document.getElementById("showMoreButton").style.display="none";
+        visible===0 ? "block" : "none";
 
 }
 
@@ -2183,6 +3188,7 @@ function showAllProducts(){
 window.addEventListener("click",function(event){
 
     const modal=document.getElementById("modal");
+
 
     if(event.target===modal){
 
@@ -2209,6 +3215,8 @@ document.addEventListener("keydown",function(event){
 
 </script>
 
+
 </body>
+
 </html>
 ```
